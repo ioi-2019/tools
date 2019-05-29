@@ -2,6 +2,11 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import csv
 import logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',level=logging.INFO)
+import os
+
+# Load .env
+from dotenv import load_dotenv
+load_dotenv()
 
 # Create a location dictionary
 loc_file = 'location.csv'
@@ -10,8 +15,7 @@ with open(loc_file, mode='r') as infile:
     loc_dict = {rows[0]:rows[1] for rows in reader}
 
 # Create Updater and Dispatcher object
-token='802082349:AAEfJy8nf7ebSXmztNqnVv27ipHVXvJL2as'
-updater = Updater(token)
+updater = Updater(os.getenv("TELEGRAM_API_KEY"))
 dispatcher = updater.dispatcher
 
 # Reply wrapper method
