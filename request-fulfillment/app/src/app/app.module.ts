@@ -50,6 +50,10 @@ import { RequestsService } from './services/api/requests.service';
 
 // Import 3rd party service
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { UsersComponent } from './views/users/users.component';
+import { TasksComponent } from './views/tasks/tasks.component';
+import { TaskEditComponent } from './views/task-edit/task-edit.component';
+import { UserEditComponent } from './views/user-edit/user-edit.component';
 
 
 @NgModule({
@@ -76,7 +80,11 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
     P404Component,
     P500Component,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UsersComponent,
+    TasksComponent,
+    TaskEditComponent,
+    UserEditComponent
   ],
   providers: [{
     provide: LocationStrategy,

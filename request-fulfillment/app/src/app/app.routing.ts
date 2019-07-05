@@ -8,6 +8,10 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { UsersComponent } from './views/users/users.component';
+import { TasksComponent } from './views/tasks/tasks.component';
+import { TaskEditComponent } from './views/task-edit/task-edit.component';
+import { UserEditComponent } from './views/user-edit/user-edit.component';
 
 export const routes: Routes = [
   {
@@ -43,6 +47,34 @@ export const routes: Routes = [
       title: 'Register Page'
     }
   },
+    {
+        path: 'users',
+        component: UsersComponent,
+        data: {
+            title: 'User Page'
+        }
+    },
+    {
+        path: 'tasks',
+        component: TasksComponent,
+        data: {
+            title: 'Task Page'
+        }
+    },
+    {
+        path: 'task-edit',
+        component: TaskEditComponent,
+        data: {
+            title: 'Edit task Page'
+        }
+    },
+    {
+        path: 'user-edit',
+        component: UserEditComponent,
+        data: {
+            title: 'Edit user Page'
+        }
+    },
   {
     path: '',
     component: DefaultLayoutComponent,
