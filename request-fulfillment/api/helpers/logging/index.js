@@ -1,7 +1,7 @@
 const authLogger = require('./auth-logger.js');
-const requestLogger = require('./request-logger.js');
+const taskLogger = require('./task-logger.js');
 
 module.exports = {
     authLogger,
-    requestLogger
+    taskLogger
 };
