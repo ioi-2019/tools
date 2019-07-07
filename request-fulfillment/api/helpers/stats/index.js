@@ -1,7 +1,7 @@
 const userStats = require('./user-stats');
-const requestStats = require('./request-stats');
+const taskStats = require('./task-stats');
 
 module.exports = {
     userStats,
-    requestStats
+    taskStats
 };

@@ -30,9 +30,20 @@ router.get('/:id', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.post('/:id/manage/give-admin-permission', (req, res, next) => {
+router.post('/:id/manage/give-admin-privilege', (req, res, next) => {
     const userID = Number(req.params.id);
     users.manageUsers.giveAdminPrivilege(userID)
+        .then(() => {
+            res.status(200).json({
+                status: 'success'
+            });
+        })
+        .catch((err) => next(err));
+});
+
+router.post('/:id/manage/take-admin-privilege', (req, res, next) => {
+    const userID = Number(req.params.id);
+    users.manageUsers.takeAdminPrivilege(userID)
         .then(() => {
             res.status(200).json({
                 status: 'success'
@@ -53,8 +64,8 @@ router.post('/:id/manage/approve', (req, res, next) => {
 });
 
 router.post('/:id/manage/reject', (req, res, next) => {
-    const id = Number(req.params.id);
-    users.manageUsers.rejectUser(id)
+    const userID = Number(req.params.id);
+    users.manageUsers.rejectUser(userID)
         .then(() => {
             res.status(200).json({
                 status: 'success'

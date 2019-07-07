@@ -12,6 +12,7 @@ import { UsersComponent } from './views/users/users.component';
 import { TasksComponent } from './views/tasks/tasks.component';
 import { TaskEditComponent } from './views/task-edit/task-edit.component';
 import { UserEditComponent } from './views/user-edit/user-edit.component';
+import { LogoutComponent } from './views/logout/logout.component';
 
 export const routes: Routes = [
   {
@@ -37,44 +38,23 @@ export const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     data: {
-      title: 'Login Page'
+      title: 'Login'
+    }
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent,
+    data: {
+      title: 'Logout'
     }
   },
   {
     path: 'register',
     component: RegisterComponent,
     data: {
-      title: 'Register Page'
+      title: 'Register'
     }
   },
-    {
-        path: 'users',
-        component: UsersComponent,
-        data: {
-            title: 'User Page'
-        }
-    },
-    {
-        path: 'tasks',
-        component: TasksComponent,
-        data: {
-            title: 'Task Page'
-        }
-    },
-    {
-        path: 'task-edit',
-        component: TaskEditComponent,
-        data: {
-            title: 'Edit task Page'
-        }
-    },
-    {
-        path: 'user-edit',
-        component: UserEditComponent,
-        data: {
-            title: 'Edit user Page'
-        }
-    },
   {
     path: '',
     component: DefaultLayoutComponent,
@@ -82,6 +62,34 @@ export const routes: Routes = [
       title: 'Home'
     },
     children: [
+      {
+        path: 'users',
+        component: UsersComponent,
+        data: {
+          title: 'Users'
+        }
+      },
+      {
+        path: 'tasks',
+        component: TasksComponent,
+        data: {
+          title: 'Tasks'
+        }
+      },
+      {
+        path: 'task-edit',
+        component: TaskEditComponent,
+        data: {
+          title: 'Edit Task'
+        }
+      },
+      {
+        path: 'user-edit',
+        component: UserEditComponent,
+        data: {
+          title: 'Edit User'
+        }
+      },
       {
         path: 'base',
         loadChildren: './views/base/base.module#BaseModule'
@@ -120,7 +128,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

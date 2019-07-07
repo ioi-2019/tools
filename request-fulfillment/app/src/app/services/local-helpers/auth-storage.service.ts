@@ -22,12 +22,20 @@ export class AuthStorageService {
         return this.storage.clear(key);
     }
 
-    getUsername() {
-        this.retrieve('username');
+    getAuthStatus(): boolean {
+        return this.retrieve('authStatus');
     }
 
-    getAuthToken() {
-        this.retrieve('authToken');
+    getUsername(): string {
+        return this.retrieve('username');
+    }
+
+    getAuthToken(): string {
+        return this.retrieve('authToken');
+    }
+
+    setAuthStatus(authStatus: boolean) {
+        this.store('authStatus', authStatus);
     }
 
     setUsername(username: string) {

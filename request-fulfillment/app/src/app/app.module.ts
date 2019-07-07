@@ -18,6 +18,7 @@ import { DefaultLayoutComponent } from './containers';
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
+import { LogoutComponent } from './views/logout/logout.component';
 import { RegisterComponent } from './views/register/register.component';
 
 const APP_CONTAINERS = [
@@ -31,6 +32,9 @@ import {
   AppFooterModule,
   AppSidebarModule,
 } from '@coreui/angular';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Import routing module
 import { AppRoutingModule } from './app.routing';
@@ -72,7 +76,9 @@ import { UserEditComponent } from './views/user-edit/user-edit.component';
     NgxWebstorageModule.forRoot({
       prefix: 'cms-rf',
       caseSensitive: true
-    })
+    }),
+    HttpClientModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
@@ -80,6 +86,7 @@ import { UserEditComponent } from './views/user-edit/user-edit.component';
     P404Component,
     P500Component,
     LoginComponent,
+    LogoutComponent,
     RegisterComponent,
     UsersComponent,
     TasksComponent,

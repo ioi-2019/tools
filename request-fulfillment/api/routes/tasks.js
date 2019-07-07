@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const { checkUser } = require('../middleware/auth');
-const { getRequests, getRequest } = require('../helpers/requests');
+const { getTasks, manageTasks } = require('../helpers/tasks');
 
 router.get('/', (req, res, next) => {
-    getRequests()
-        .then((requests) => {
+    getTasks.getAllTasks()
+        .then((tasks) => {
             res.status(200).json({
                 status: 'success',
                 data: {
-                    requests: requests
+                    tasks: tasks
                 }
             });
         })
@@ -18,13 +18,25 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
     const id = req.params.id;
-    getRequest.getRequestById(id)
-        .then((request) => {
+    getTasks.getTaskById(id)
+        .then((task) => {
             res.status(200).json({
                 status: 'success',
                 data: {
-                    request: request
+                    task: task
                 }
+            });
+        })
+        .catch((err) => next(err));
+});
+
+router.post('/:id/manage/reply', (req, res, next) => {
+    const id = req.params.id;
+    const { username, reply_subject, reply_text } = req.body;
+    manageTasks.replyTask({ id, username, reply_subject, reply_text })
+        .then(() => {
+            res.status(200).json({
+                status: 'success'
             });
         })
         .catch((err) => next(err));

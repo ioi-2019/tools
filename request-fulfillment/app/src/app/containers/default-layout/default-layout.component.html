@@ -4,20 +4,17 @@
   [navbarBrandFull]="{src: 'assets/img/brand/logo.png', width: 50, height: 50, alt: 'IOI 2019 Logo'}"
   [navbarBrandMinimized]="{src: 'assets/img/brand/logo.png', width: 50, height: 50, alt: 'IOI 2019 Logo'}"
   [sidebarToggler]="'lg'"
-  [asideMenuToggler]="'lg'">
+  [asideMenuToggler]="false">
   <ul class="nav navbar-nav ml-auto">
-    <li class="nav-item d-md-down-none">
-      <a class="nav-link" href="#"><i class="icon-bell"></i><span class="badge badge-pill badge-danger">5</span></a>
-    </li>
     <li class="nav-item dropdown" dropdown placement="bottom right">
       <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false">
-        <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com"/>
+        <img src="assets/img/avatars/profile.png" class="img-avatar" />
       </a>
       <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
         <div class="dropdown-header text-center"><strong>Settings</strong></div>
-        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
-        <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Setting</a>
-        <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+        <!-- <a class="dropdown-item" routerLink="/profile" href="#"><i class="fa fa-user"></i> Profile</a>
+        <a class="dropdown-item" routerLink="/settings" href="#"><i class="fa fa-wrench"></i> Settings</a> -->
+        <a class="dropdown-item" routerLink="/logout" href="#"><i class="fa fa-lock"></i> Logout</a>
       </div>
     </li>
   </ul>

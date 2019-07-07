@@ -4,8 +4,7 @@ const { login, register, logout } = require('../helpers/auth');
 const { respondSuccess } = require('../helpers/responder');
 
 router.post('/login', (req, res, next) => {
-    const username = req.body.username;
-    const password = req.body.password;
+    const { username, password } = req.body;
     login(username, password)
         .then((account) => {
             res.status(200).json({
@@ -19,9 +18,8 @@ router.post('/login', (req, res, next) => {
 });
 
 router.post('/logout', (req, res, next) => {
-    const username = req.body.username;
-    const authToken = req.body.authToken;
-    logout(username, authToken)
+    const { username, auth_token } = req.body;
+    logout(username, auth_token)
         .then(() => {
             respondSuccess(res);
         })
@@ -29,11 +27,11 @@ router.post('/logout', (req, res, next) => {
 });
 
 router.post('/register', (req, res, next) => {
-    const { username, firstName, lastName, password } = req.body;
+    const { username, first_name, last_name, password } = req.body;
     register({
         username,
-        firstName,
-        lastName,
+        first_name,
+        last_name,
         password
     })
         .then(() => {

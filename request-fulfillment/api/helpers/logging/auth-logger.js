@@ -22,8 +22,8 @@ const logAuthAction = (userId, action) => {
             action: action,
             logged_at: knexRF.fn.now()
         })
-        .then((requests) => {
-            const rows = requests.length;
+        .then((actions) => {
+            const rows = actions.length;
             console.log(rows);
             if (rows > 0) {
                 return Promise.resolve();
