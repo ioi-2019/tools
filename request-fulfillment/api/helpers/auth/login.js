@@ -29,7 +29,8 @@ module.exports = (username, password) => {
             if (user) {
                 return Promise.resolve({
                     username: user.username,
-                    auth_token: user.auth_token
+                    auth_token: user.auth_token,
+                    is_admin: user.is_admin
                 });
             } else {
                 throw new Error('Could not login');

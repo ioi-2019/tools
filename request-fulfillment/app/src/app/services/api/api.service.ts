@@ -4,6 +4,13 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ConstantsService } from '../local-helpers/contants.service';
 import { AuthStorageService } from '../local-helpers/auth-storage.service';
 
+export interface APIResponse {
+    status: string;
+    data?: {
+        [key: string]: any
+    };
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -17,7 +24,7 @@ export class APIService {
     ) { }
 
     sendGetRequest(data, routeURL) {
-        return new Promise<any>((resolve, reject) => {
+        return new Promise<APIResponse>((resolve, reject) => {
             let headers = new HttpHeaders();
             headers = headers.append('Content-Type', 'application/json');
             let params = new HttpParams();
@@ -41,7 +48,7 @@ export class APIService {
     }
 
     sendPostRequest(data, routeURL) {
-        return new Promise<any>((resolve, reject) => {
+        return new Promise<APIResponse>((resolve, reject) => {
             let headers = new HttpHeaders();
             headers = headers.append('Content-Type', 'application/json');
             this.httpClient.post(this.constantsService.API_URL + routeURL, JSON.stringify(data), { headers: headers })

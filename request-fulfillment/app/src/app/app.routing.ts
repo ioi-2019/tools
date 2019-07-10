@@ -13,6 +13,8 @@ import { TasksComponent } from './views/tasks/tasks.component';
 import { TaskEditComponent } from './views/task-edit/task-edit.component';
 import { UserEditComponent } from './views/user-edit/user-edit.component';
 import { LogoutComponent } from './views/logout/logout.component';
+import { ActiveUsersComponent } from './views/users/active-users/active-users.component';
+import { PendingUsersComponent } from './views/users/pending-users/pending-users.component';
 
 export const routes: Routes = [
   {
@@ -67,6 +69,20 @@ export const routes: Routes = [
         component: UsersComponent,
         data: {
           title: 'Users'
+        }
+      },
+      {
+        path: 'active-users',
+        component: ActiveUsersComponent,
+        data: {
+          title: 'Active Users'
+        }
+      },
+      {
+        path: 'pending-users',
+        component: PendingUsersComponent,
+        data: {
+          title: 'Pending Users'
         }
       },
       {

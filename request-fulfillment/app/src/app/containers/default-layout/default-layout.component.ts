@@ -1,4 +1,4 @@
-import { Component, OnDestroy, Inject } from '@angular/core';
+import { Component, OnDestroy, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { navItems } from '../../_nav';
 import { AuthStorageService } from '../../services/local-helpers/auth-storage.service';
@@ -15,9 +15,9 @@ export class DefaultLayoutComponent implements OnInit, OnDestroy {
   private changes: MutationObserver;
   public element: HTMLElement;
   constructor(
-    @Inject(DOCUMENT) _document?: any,
     private router: Router,
-    private authStorageService: AuthStorageService
+    private authStorageService: AuthStorageService,
+    @Inject(DOCUMENT) _document?: any
   ) {
 
     this.changes = new MutationObserver((mutations) => {

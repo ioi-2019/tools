@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
       .then((res) => {
         if (res.status === 'success') {
           this.authStorageService.setAuthStatus(true);
+          this.authStorageService.setAdminStatus(res.data.account.is_admin);
           this.authStorageService.setUsername(res.data.account.username);
           this.authStorageService.setAuthToken(res.data.account.auth_token);
           this.router.navigateByUrl('/dashboard');
