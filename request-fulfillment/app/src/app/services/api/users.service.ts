@@ -14,20 +14,28 @@ export class UsersService {
         return this.apiService.sendGetRequest(data, '/users');
     }
 
-    acceptUser(userID, data) {
-        return this.apiService.sendPostRequest(data, `/users/${userID}/accept`);
+    getActiveUsers(data) {
+        return this.apiService.sendGetRequest(data, '/users/active');
+    }
+
+    getPendingUsers(data) {
+        return this.apiService.sendGetRequest(data, '/users/pending');
+    }
+
+    approveUser(userID, data) {
+        return this.apiService.sendPostRequest(data, `/users/${userID}/manage/approve`);
     }
 
     rejectUser(userID, data) {
-        return this.apiService.sendPostRequest(data, `/users/${userID}/reject`);
+        return this.apiService.sendPostRequest(data, `/users/${userID}/manage/reject`);
     }
 
     giveAdminPermission(userID, data) {
-        return this.apiService.sendPostRequest(data, `/users/${userID}/give-admin-permission`);
+        return this.apiService.sendPostRequest(data, `/users/${userID}/manage/give-admin-privilege`);
     }
 
     takeAdminPermission(userID, data) {
-        return this.apiService.sendPostRequest(data, `/users/${userID}/take-admin-permission`);
+        return this.apiService.sendPostRequest(data, `/users/${userID}/manage/take-admin-privilege`);
     }
 
 }

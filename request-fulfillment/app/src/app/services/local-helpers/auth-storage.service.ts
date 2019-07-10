@@ -26,6 +26,10 @@ export class AuthStorageService {
         return this.retrieve('authStatus');
     }
 
+    getAdminStatus(): boolean {
+        return this.retrieve('isAdmin');
+    }
+
     getUsername(): string {
         return this.retrieve('username');
     }
@@ -36,6 +40,10 @@ export class AuthStorageService {
 
     setAuthStatus(authStatus: boolean) {
         this.store('authStatus', authStatus);
+    }
+
+    setAdminStatus(isAdmin: boolean) {
+        this.store('isAdmin', isAdmin);
     }
 
     setUsername(username: string) {

@@ -17,6 +17,16 @@ exports.seed = function (knex) {
                 is_admin: true,
                 is_superadmin: true,
                 is_approved: true
+              },
+              {
+                id: 2,
+                username: 'user1',
+                first_name: 'User1',
+                last_name: 'User1',
+                password: hash,
+                is_admin: false,
+                is_superadmin: false,
+                is_approved: false
               }
             ]);
         });

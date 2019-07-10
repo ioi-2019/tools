@@ -1,0 +1,24 @@
+// :host /deep/ a:link {
+//   color: black;
+// }
+// :host /deep/ a:hover {
+//   color: black;
+// }
+// :host /deep/ a:focus {
+//   color: black;
+// }
+
+// :host /deep/ table thead tr:nth-child(even) {
+//   background: #eef5f9 !important;
+// }
+
+// :host /deep/ table thead {
+//   background: #4a83a3 !important;
+// }
+
+:host /deep/ table tbody tr:nth-child(even) {
+  background: white !important;
+}
+:host /deep/ table tbody tr:nth-child(odd) {
+  background: #b1c6d3 !important;
+}

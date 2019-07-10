@@ -15,6 +15,17 @@ import { AppComponent } from './app.component';
 // Import containers
 import { DefaultLayoutComponent } from './containers';
 
+// Import container-based components
+import { UsersComponent } from './views/users/users.component';
+import { ActiveUsersComponent } from './views/users/active-users/active-users.component';
+import { PendingUsersComponent } from './views/users/pending-users/pending-users.component';
+import { TasksComponent } from './views/tasks/tasks.component';
+import { TaskEditComponent } from './views/task-edit/task-edit.component';
+import { UserEditComponent } from './views/user-edit/user-edit.component';
+import { TableUserStatusComponent } from './components/table-user-status/table-user-status.component';
+import { TableUserRoleComponent } from './components/table-user-role/table-user-role.component';
+
+// Import container-free components
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
@@ -34,7 +45,7 @@ import {
 } from '@coreui/angular';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Import routing module
 import { AppRoutingModule } from './app.routing';
@@ -54,10 +65,7 @@ import { RequestsService } from './services/api/requests.service';
 
 // Import 3rd party service
 import { NgxWebstorageModule } from 'ngx-webstorage';
-import { UsersComponent } from './views/users/users.component';
-import { TasksComponent } from './views/tasks/tasks.component';
-import { TaskEditComponent } from './views/task-edit/task-edit.component';
-import { UserEditComponent } from './views/user-edit/user-edit.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 
 @NgModule({
@@ -78,7 +86,9 @@ import { UserEditComponent } from './views/user-edit/user-edit.component';
       caseSensitive: true
     }),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    Ng2SmartTableModule
   ],
   declarations: [
     AppComponent,
@@ -89,9 +99,13 @@ import { UserEditComponent } from './views/user-edit/user-edit.component';
     LogoutComponent,
     RegisterComponent,
     UsersComponent,
+    ActiveUsersComponent,
+    PendingUsersComponent,
     TasksComponent,
     TaskEditComponent,
-    UserEditComponent
+    UserEditComponent,
+    TableUserStatusComponent,
+    TableUserRoleComponent
   ],
   providers: [{
     provide: LocationStrategy,
@@ -103,6 +117,10 @@ import { UserEditComponent } from './views/user-edit/user-edit.component';
     AuthService,
     UsersService,
     RequestsService
+  ],
+  entryComponents: [
+    TableUserStatusComponent,
+    TableUserRoleComponent
   ],
   bootstrap: [AppComponent]
 })

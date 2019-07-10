@@ -4,7 +4,33 @@ const { checkUser } = require('../middleware/auth');
 const users = require('../helpers/users');
 
 router.get('/', (req, res, next) => {
-    users.getUsers()
+    users.getUsers.getAllUsers()
+        .then((users) => {
+            res.status(200).json({
+                status: 'success',
+                data: {
+                    users: users
+                }
+            });
+        })
+        .catch((err) => next(err));
+});
+
+router.get('/active', (req, res, next) => {
+    users.getUsers.getActiveUsers()
+        .then((users) => {
+            res.status(200).json({
+                status: 'success',
+                data: {
+                    users: users
+                }
+            });
+        })
+        .catch((err) => next(err));
+});
+
+router.get('/pending', (req, res, next) => {
+    users.getUsers.getPendingUsers()
         .then((users) => {
             res.status(200).json({
                 status: 'success',
