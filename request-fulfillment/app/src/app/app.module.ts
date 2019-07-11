@@ -20,10 +20,14 @@ import { UsersComponent } from './views/users/users.component';
 import { ActiveUsersComponent } from './views/users/active-users/active-users.component';
 import { PendingUsersComponent } from './views/users/pending-users/pending-users.component';
 import { TasksComponent } from './views/tasks/tasks.component';
+import { PersonalTasksComponent } from './views/tasks/personal-tasks/personal-tasks.component';
+import { PendingTasksComponent } from './views/tasks/pending-tasks/pending-tasks.component';
+import { CompletedTasksComponent } from './views/tasks/completed-tasks/completed-tasks.component';
 import { TaskEditComponent } from './views/task-edit/task-edit.component';
 import { UserEditComponent } from './views/user-edit/user-edit.component';
 import { TableUserStatusComponent } from './components/table-user-status/table-user-status.component';
 import { TableUserRoleComponent } from './components/table-user-role/table-user-role.component';
+import { TableTaskStatusComponent } from './components/table-task-status/table-task-status';
 
 // Import container-free components
 import { P404Component } from './views/error/404.component';
@@ -61,7 +65,7 @@ import { AuthStorageService } from './services/local-helpers/auth-storage.servic
 import { APIService } from './services/api/api.service';
 import { AuthService } from './services/api/auth.service';
 import { UsersService } from './services/api/users.service';
-import { RequestsService } from './services/api/requests.service';
+import { TasksService } from './services/api/tasks.service';
 
 // Import 3rd party service
 import { NgxWebstorageModule } from 'ngx-webstorage';
@@ -102,10 +106,14 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     ActiveUsersComponent,
     PendingUsersComponent,
     TasksComponent,
+    PersonalTasksComponent,
+    PendingTasksComponent,
+    CompletedTasksComponent,
     TaskEditComponent,
     UserEditComponent,
     TableUserStatusComponent,
-    TableUserRoleComponent
+    TableUserRoleComponent,
+    TableTaskStatusComponent
   ],
   providers: [{
     provide: LocationStrategy,
@@ -116,11 +124,12 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     APIService,
     AuthService,
     UsersService,
-    RequestsService
+    TasksService
   ],
   entryComponents: [
     TableUserStatusComponent,
-    TableUserRoleComponent
+    TableUserRoleComponent,
+    TableTaskStatusComponent
   ],
   bootstrap: [AppComponent]
 })

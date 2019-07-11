@@ -15,6 +15,9 @@ import { UserEditComponent } from './views/user-edit/user-edit.component';
 import { LogoutComponent } from './views/logout/logout.component';
 import { ActiveUsersComponent } from './views/users/active-users/active-users.component';
 import { PendingUsersComponent } from './views/users/pending-users/pending-users.component';
+import { PersonalTasksComponent } from './views/tasks/personal-tasks/personal-tasks.component';
+import { PendingTasksComponent } from './views/tasks/pending-tasks/pending-tasks.component';
+import { CompletedTasksComponent } from './views/tasks/completed-tasks/completed-tasks.component';
 
 export const routes: Routes = [
   {
@@ -90,6 +93,27 @@ export const routes: Routes = [
         component: TasksComponent,
         data: {
           title: 'Tasks'
+        }
+      },
+      {
+        path: 'personal-tasks',
+        component: PersonalTasksComponent,
+        data: {
+          title: 'Personal Tasks'
+        }
+      },
+      {
+        path: 'pending-tasks',
+        component: PendingTasksComponent,
+        data: {
+          title: 'Pending Tasks'
+        }
+      },
+      {
+        path: 'completed-tasks',
+        component: CompletedTasksComponent,
+        data: {
+          title: 'Completed Tasks'
         }
       },
       {

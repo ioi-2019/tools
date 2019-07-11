@@ -1,0 +1,6 @@
+:host /deep/ table tbody tr:nth-child(even) {
+  background: white !important;
+}
+:host /deep/ table tbody tr:nth-child(odd) {
+  background: #b1c6d3 !important;
+}

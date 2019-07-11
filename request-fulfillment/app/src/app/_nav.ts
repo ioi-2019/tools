@@ -60,6 +60,23 @@ export const navItems: NavData[] = [
     name: 'Tasks',
     url: '/tasks',
     icon: 'icon-check',
+    children: [
+      {
+        name: 'Personal Tasks',
+        url: '/personal-tasks',
+        icon: 'icon-check',
+      },
+      {
+        name: 'Pending Tasks',
+        url: '/pending-tasks',
+        icon: 'icon-check',
+      },
+      {
+        name: 'Completed Tasks',
+        url: '/completed-tasks',
+        icon: 'icon-check',
+      }
+    ]
   },
   {
     name: 'Base',
