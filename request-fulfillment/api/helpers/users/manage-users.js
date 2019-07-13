@@ -1,8 +1,8 @@
-const { knexRF } = require('../../db/config');
+const { knex } = require('../../db/config');
 const { tables } = require('../constants');
 
 const approveUser = (id) => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .update('is_approved', true)
         .where('id', id)
         .returning('*')
@@ -16,7 +16,7 @@ const approveUser = (id) => {
 };
 
 const rejectUser = (id) => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .del()
         .where('id', id)
         .then((user) => {
@@ -29,7 +29,7 @@ const rejectUser = (id) => {
 };
 
 const giveAdminPrivilege = (id) => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .update('is_admin', true)
         .where({
             id: id,
@@ -46,7 +46,7 @@ const giveAdminPrivilege = (id) => {
 };
 
 const takeAdminPrivilege = (id) => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .update('is_admin', false)
         .where({
             id: id,

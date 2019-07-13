@@ -1,7 +1,4 @@
-const envRF = process.env.NODE_ENV || 'development';
-const envCMS = 'cms';
-const configRF = require('../knexfile')[envRF];
-const configCMS = require('../knexfile')[envCMS];
+const env = process.env.NODE_ENV || 'development';
+const config = require('../knexfile')[env];
 
-module.exports.knexRF = require('knex')(configRF);
-module.exports.knexCMS = require('knex')(configCMS);
+module.exports.knex = require('knex')(config);

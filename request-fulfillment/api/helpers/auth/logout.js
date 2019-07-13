@@ -1,8 +1,8 @@
-const { knexRF } = require('../../db/config');
+const { knex } = require('../../db/config');
 const { tables } = require('../constants');
 
 module.exports = (username, authToken) => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .update({
             auth_token: null
         })

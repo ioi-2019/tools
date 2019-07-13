@@ -1,12 +1,13 @@
 const { hashPassword } = require('../../helpers/auth/hasher');
+const tables = require('../../helpers/constants/tables');
 
 exports.seed = function (knex) {
-  return knex('users')
+  return knex(tables.TABLE_USERS)
     .del()
     .then(() => {
       return hashPassword('admin')
         .then((hash) => {
-          return knex('users')
+          return knex(tables.TABLE_USERS)
             .insert([
               {
                 id: 1,

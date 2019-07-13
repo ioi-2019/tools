@@ -1,8 +1,8 @@
-const { knexRF } = require('../../db/config');
+const { knex } = require('../../db/config');
 const { tables } = require('../constants');
 
 const getAllUsers = () => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .select(
             'id',
             'username',
@@ -21,7 +21,7 @@ const getAllUsers = () => {
 };
 
 const getActiveUsers = () => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .select(
             'id',
             'username',
@@ -40,7 +40,7 @@ const getActiveUsers = () => {
 };
 
 const getPendingUsers = () => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .select(
             'id',
             'username',

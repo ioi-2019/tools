@@ -1,4 +1,4 @@
-const { knexRF } = require('../../db/config');
+const { knex } = require('../../db/config');
 const { tables } = require('../constants');
 const { hashPassword } = require('./hasher');
 
@@ -6,7 +6,7 @@ module.exports = (params) => {
     const { username, first_name, last_name, password } = params;
     return hashPassword(password)
         .then((hash) => {
-            return knexRF(tables.TABLE_USERS)
+            return knex(tables.TABLE_USERS)
                 .insert({
                     username: username,
                     first_name: first_name,
