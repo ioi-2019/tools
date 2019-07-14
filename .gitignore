@@ -18,6 +18,9 @@
 **/*.log
 **/*.gz
 
+# Editors
+**/.idea
+
 # Coveralls
 # coverage
 
