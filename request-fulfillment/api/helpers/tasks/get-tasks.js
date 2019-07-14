@@ -2,15 +2,26 @@ const { knex } = require('../../db/config');
 const { tables, errors } = require('../constants');
 const AppError = require('../errors/app-error');
 
-const getTaskById = (id) => {
+const getTaskById = (taskID) => {
     return getTask({
-        id: id
+        'q.id': taskID
     });
 };
 
 const getTask = (params) => {
-    return knex(tables.CMS_TABLE_QUESTIONS)
-        .select('*')
+    return knex(tables.CMS_TABLE_QUESTIONS + ' as q')
+        .select(
+            'q.*',
+            't.id as task_id',
+            't.rf_user_id as task_assignee_id',
+            't.created_at as task_created_at',
+            't.removed_at as task_removed_at'
+        )
+        .leftJoin(
+            tables.TABLE_TASKS + ' as t',
+            'q.id',
+            't.question_id'
+        )
         .where(params)
         .first()
         .then((task) => {
@@ -67,19 +78,26 @@ const getPersonalTasks = (userID) => {
 };
 
 const getNewTasks = () => {
-    return knex(tables.CMS_TABLE_QUESTIONS)
-        .select('*')
-        .leftJoin(
-            tables.CMS_TABLE_PARTICIPATIONS,
-            tables.CMS_TABLE_QUESTIONS + '.participation_id',
-            tables.CMS_TABLE_PARTICIPATIONS + '.id'
+    // TODO: do we really need to add assigned person to this query?
+    return knex(tables.CMS_TABLE_QUESTIONS + ' as q')
+        .select(
+            'q.id',
+            'u.username as contestand_username',
+            'q.subject',
+            'q.question_timestamp'
         )
         .leftJoin(
-            tables.CMS_TABLE_USERS,
-            tables.CMS_TABLE_PARTICIPATIONS + '.user_id',
-            tables.CMS_TABLE_USERS + '.id'
+            tables.CMS_TABLE_PARTICIPATIONS + ' as p',
+            'q.participation_id',
+            'p.id'
+        )
+        .leftJoin(
+            tables.CMS_TABLE_USERS + ' as u',
+            'p.user_id',
+            'u.id'
         )
         .whereNull('admin_id')
+        .orderBy('q.question_timestamp', 'asc')
         .then((tasks) => {
             return Promise.resolve(tasks);
         })

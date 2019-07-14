@@ -1,25 +1,44 @@
 const { knex } = require('../../db/config');
 const { tables, errors } = require('../constants');
-const { getTask } = require('./get-tasks');
+const { getTaskById } = require('./get-tasks');
 const { getUser } = require('../users');
+const AppError = require('../errors/app-error');
 
-const replyTask = (taskID, params) => {
-    const { reply_subject, reply_text } = params;
-    console.log(params);
-    return knex(tables.CMS_TABLE_QUESTIONS)
-        .update({
-            reply_timestamp: knex.fn.now(),
-            reply_subject: reply_subject,
-            reply_text: reply_text
+const replyTask = (taskID, userID, params) => {
+    const { first_name, last_name, reply_subject, reply_text } = params;
+    return getTaskById(taskID)
+        .then((task) => {
+            if (task.task_assignee_id === userID) {
+                const signature = generateSignature(first_name, last_name);
+                const replyText = reply_text + signature;
+                return knex(tables.CMS_TABLE_QUESTIONS)
+                    .update({
+                        reply_timestamp: knex.fn.now(),
+                        reply_subject: reply_subject,
+                        reply_text: replyText
+                    })
+                    .where('id', taskID)
+                    .whereNotNull('admin_id')
+                    .returning('*');
+            } else {
+                throw new AppError(errors.ERR_CANNOT_REPLY_TASK);
+            }
         })
-        .where('id', taskID)
-        .then((questions) => {
-            console.log(questions);
-            return Promise.resolve();
+        .then((tasks) => {
+            const task = tasks[0];
+            if (task) {
+                return Promise.resolve();
+            } else {
+                throw new Error(errors.ERR_ERROR_OCCURED);
+            }
         })
         .catch((err) => {
             return Promise.reject(err);
         });
+};
+
+const generateSignature = (firstName, lastName) => {
+    return `\n\nAnswered by ${firstName} ${lastName}`;
 };
 
 const assignUser = (taskID, userID) => {

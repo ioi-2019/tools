@@ -77,7 +77,19 @@ router.get('/:id', (req, res, next) => {
 router.post('/:id/manage/reply', (req, res, next) => {
     const taskID = req.params.id;
     const { username, reply_subject, reply_text } = req.body;
-    manageTasks.replyTask(taskID, { username, reply_subject, reply_text })
+    return getUser.getUserByUsername(username)
+        .then((user) => {
+            return manageTasks.replyTask(
+                taskID,
+                user.id,
+                {
+                    first_name: user.first_name,
+                    last_name: user.last_name,
+                    reply_subject,
+                    reply_text
+                }
+            );
+        })
         .then(() => {
             res.status(200).json({
                 status: 'success'
