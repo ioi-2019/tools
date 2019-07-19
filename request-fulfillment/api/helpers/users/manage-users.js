@@ -1,14 +1,18 @@
-const { knexRF } = require('../../db/config');
-const { tables } = require('../constants');
+const { knex } = require('../../db/config');
+const { tables, errors } = require('../constants');
 
 const approveUser = (id) => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .update('is_approved', true)
         .where('id', id)
         .returning('*')
-        .then((user) => {
-            console.log(user);
-            return Promise.resolve();
+        .then((users) => {
+            const user = users[0];
+            if (user) {
+                return Promise.resolve();
+            } else {
+                throw new Error(errors.ERR_ERROR_OCCURED);
+            }
         })
         .catch((err) => {
             return Promise.reject(err);
@@ -16,7 +20,7 @@ const approveUser = (id) => {
 };
 
 const rejectUser = (id) => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .del()
         .where('id', id)
         .then((user) => {
@@ -29,16 +33,20 @@ const rejectUser = (id) => {
 };
 
 const giveAdminPrivilege = (id) => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .update('is_admin', true)
         .where({
             id: id,
             is_approved: true
         })
         .returning('*')
-        .then((user) => {
-            console.log(user);
-            return Promise.resolve();
+        .then((users) => {
+            const user = users[0];
+            if (user) {
+                return Promise.resolve();
+            } else {
+                throw new Error(errors.ERR_ERROR_OCCURED);
+            }
         })
         .catch((err) => {
             return Promise.reject(err);
@@ -46,7 +54,7 @@ const giveAdminPrivilege = (id) => {
 };
 
 const takeAdminPrivilege = (id) => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .update('is_admin', false)
         .where({
             id: id,
@@ -54,9 +62,13 @@ const takeAdminPrivilege = (id) => {
             is_superadmin: false
         })
         .returning('*')
-        .then((user) => {
-            console.log(user);
-            return Promise.resolve();
+        .then((users) => {
+            const user = users[0];
+            if (user) {
+                return Promise.resolve();
+            } else {
+                throw new Error(errors.ERR_ERROR_OCCURED);
+            }
         })
         .catch((err) => {
             return Promise.reject(err);

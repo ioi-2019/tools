@@ -1,5 +1,15 @@
+<style>
+  tr {
+    height: 1px;
+    font-size: 70%;
+  }
+
+  td {
+    padding: 5px 0;
+  }
+</style>
+
 <div class="animated fadeIn">
-  <!--/.card-->
   <div class="row">
     <div class="col-md-12">
       <div class="card">
@@ -7,132 +17,56 @@
           Questions and Answers
         </div>
         <div class="card-body">
-          <table class="table table-responsive-sm table-hover table-outline mb-0">
+          <table id="taskstable" class="taskstable table table-responsive-sm table-hover table-outline mb-0">
             <thead class="thead-light">
-            <tr>
-              <th class="text-center"><i class="icon-people"></i></th>
-              <th>User</th>
-              <th class="text-center">Country</th>
-              <th>Question</th>
-              <th class="text-center">Status</th>
-              <th>Activity</th>
-              <th>Actions</th>
-            </tr>
+              <tr>
+                <th class="text-center"><i class="icon-people"></i></th>
+                <th>User</th>
+                <th class="text-center">Country</th>
+                <th>Question</th>
+                <th class="text-center">Status</th>
+                <th>Activity</th>
+                <th>Actions</th>
+              </tr>
             </thead>
             <tbody>
-            <tr>
-              <td class="text-center">
-                <div class="avatar">
-                  <img src="assets/img/avatars/1.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                  <span class="avatar-status badge-success"></span>
-                </div>
-              </td>
-              <td>
-                <div>Yiorgos Avraamu</div>
-                <div class="small text-muted">
-                  <span>New</span> | Registered: Jan 1, 2015
-                </div>
-              </td>
-              <td class="text-center">
-                <i class="flag-icon flag-icon-us h4 mb-0" title="us" id="us"></i>
-              </td>
-              <td>
-                <div class="clearfix">
-                  <div class="float-left">
-                    <strong>Salam. Çölə çıxmaq olar zəhmət olmasa?</strong>
+              <tr>
+                <td class="text-center">
+                  1
+                </td>
+                <td>
+                  <div>Yiorgos Avraamu</div>
+                  <div class="small text-muted">
+                    <span>New</span> | Registered: Jan 1, 2015
                   </div>
-                </div>
-              </td>
-              <td class="text-center">
-                <span class="badge badge-success">Answered</span>
-              </td>
-              <td>
-                <div class="small text-muted">Last login</div>
-                <strong>10 sec ago</strong>
-              </td>
-              <td>
-                <a href="/task-edit"><i class="fa fa-pencil-square fa-2x"></i></a>
-                <a href="#"><i style="color: red;" class="fa fa-trash-o fa-2x"></i></a>
-                <a href="#"><i style="color: orange;" class="fa fa-ban fa-2x"></i></a>
-              </td>
-            </tr>
-            <tr>
-              <td class="text-center">
-                <div class="avatar">
-                  <img src="assets/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                  <span class="avatar-status badge-danger"></span>
-                </div>
-              </td>
-              <td>
-                <div>Avram Tarasios</div>
-                <div class="small text-muted">
-
-                  <span>Recurring</span> | Registered: Jan 1, 2015
-                </div>
-              </td>
-              <td class="text-center">
-                <i class="flag-icon flag-icon-br h4 mb-0" title="br" id="br"></i>
-              </td>
-              <td>
-                <div class="clearfix">
-                  <div class="float-left">
-                    <strong>When contest will end???? :(</strong>
+                </td>
+                <td class="text-center">
+                  <i class="flag-icon flag-icon-us h4 mb-0" title="us" id="us"></i>
+                </td>
+                <td>
+                  <div class="clearfix">
+                    <div class="float-left">
+                      <strong>Salam. Çölə çıxmaq olar zəhmət olmasa?</strong>
+                    </div>
                   </div>
-                </div>
-              </td>
-              <td class="text-center">
-                <span class="badge badge-warning">Pending</span>
-              </td>
-              <td>
-                <div class="small text-muted">Last login</div>
-                <strong>5 minutes ago</strong>
-              </td>
-              <td>
-                <a href="#"><i class="fa fa-pencil-square fa-2x"></i></a>
-                <a href="#"><i style="color: red;" class="fa fa-trash-o fa-2x"></i></a>
-                <a href="#"><i style="color: orange;" class="fa fa-ban fa-2x"></i></a>
-              </td>
-            </tr>
-            <tr>
-              <td class="text-center">
-                <div class="avatar">
-                  <img src="assets/img/avatars/3.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                  <span class="avatar-status badge-warning"></span>
-                </div>
-              </td>
-              <td>
-                <div>Quintin Ed</div>
-                <div class="small text-muted">
-                  <span>New</span> | Registered: Jan 1, 2015
-                </div>
-              </td>
-              <td class="text-center">
-                <i class="flag-icon flag-icon-in h4 mb-0" title="in" id="in"></i>
-              </td>
-              <td>
-                <div class="clearfix">
-                  <div class="float-left">
-                    <strong>Acinna olurem... May I order xash? :3</strong>
-                  </div>
-                </div>
-              </td>
-              <td class="text-center">
-                <span class="badge badge-danger">Banned</span>
-              </td>
-              <td>
-                <div class="small text-muted">Last login</div>
-                <strong>1 hour ago</strong>
-              </td>
-              <td>
-                <a href="#"><i class="fa fa-pencil-square fa-2x"></i></a>
-                <a href="#"><i style="color: red;" class="fa fa-trash-o fa-2x"></i></a>
-                <a href="#"><i style="color: orange;" class="fa fa-ban fa-2x"></i></a>
-              </td>
-            </tr>
+                </td>
+                <td class="text-center">
+                  <span class="badge badge-success">Answered</span>
+                </td>
+                <td>
+                  <div class="small text-muted">Last login</div>
+                  <strong>10 sec ago</strong>
+                </td>
+                <td>
+                  <a routerLink="/task/1"><i class="fa fa-pencil-square fa-2x"></i></a>
+                  <a href="#"><i style="color: red;" class="fa fa-trash-o fa-2x"></i></a>
+                  <a href="#"><i style="color: orange;" class="fa fa-ban fa-2x"></i></a>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </div><!--/.col-->
-  </div><!--/.row-->
+    </div>
+  </div>
 </div>

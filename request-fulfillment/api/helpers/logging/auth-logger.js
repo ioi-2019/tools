@@ -1,4 +1,4 @@
-const { knexRF } = require('../../db/config');
+const { knex } = require('../../db/config');
 const { TABLE_AUTH_LOGS } = require('../constants/tables');
 
 // TODO: complete
@@ -16,11 +16,11 @@ const logRegistration = (userId) => {
 };
 
 const logAuthAction = (userId, action) => {
-    return knexRF(TABLE_AUTH_LOGS)
+    return knex(TABLE_AUTH_LOGS)
         .insert({
             user_id: userId,
             action: action,
-            logged_at: knexRF.fn.now()
+            logged_at: knex.fn.now()
         })
         .then((actions) => {
             const rows = actions.length;

@@ -5,6 +5,7 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -20,10 +21,16 @@ import { UsersComponent } from './views/users/users.component';
 import { ActiveUsersComponent } from './views/users/active-users/active-users.component';
 import { PendingUsersComponent } from './views/users/pending-users/pending-users.component';
 import { TasksComponent } from './views/tasks/tasks.component';
-import { TaskEditComponent } from './views/task-edit/task-edit.component';
+import { PersonalTasksComponent } from './views/tasks/personal-tasks/personal-tasks.component';
+import { PendingTasksComponent } from './views/tasks/pending-tasks/pending-tasks.component';
+import { CompletedTasksComponent } from './views/tasks/completed-tasks/completed-tasks.component';
+import { TaskComponent } from './views/task/task.component';
 import { UserEditComponent } from './views/user-edit/user-edit.component';
 import { TableUserStatusComponent } from './components/table-user-status/table-user-status.component';
 import { TableUserRoleComponent } from './components/table-user-role/table-user-role.component';
+import { CompletedTaskActionsComponent } from './components/completed-task-actions/completed-task-actions.component';
+import { NewTaskActionsComponent, TaskAssignmentComponent } from './components/new-task-actions/new-task-actions.component';
+import { PersonalTaskActionsComponent } from './components/personal-task-actions/personal-task-actions.component';
 
 // Import container-free components
 import { P404Component } from './views/error/404.component';
@@ -46,6 +53,7 @@ import {
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Import routing module
 import { AppRoutingModule } from './app.routing';
@@ -61,11 +69,12 @@ import { AuthStorageService } from './services/local-helpers/auth-storage.servic
 import { APIService } from './services/api/api.service';
 import { AuthService } from './services/api/auth.service';
 import { UsersService } from './services/api/users.service';
-import { RequestsService } from './services/api/requests.service';
+import { TasksService } from './services/api/tasks.service';
 
 // Import 3rd party service
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -79,6 +88,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     AppSidebarModule,
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
+    ModalModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
     NgxWebstorageModule.forRoot({
@@ -88,7 +98,9 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -102,25 +114,37 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     ActiveUsersComponent,
     PendingUsersComponent,
     TasksComponent,
-    TaskEditComponent,
+    PersonalTasksComponent,
+    PendingTasksComponent,
+    CompletedTasksComponent,
+    TaskComponent,
     UserEditComponent,
     TableUserStatusComponent,
-    TableUserRoleComponent
+    TableUserRoleComponent,
+    CompletedTaskActionsComponent,
+    NewTaskActionsComponent,
+    PersonalTaskActionsComponent,
+    TaskAssignmentComponent
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: PathLocationStrategy
-  },
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: PathLocationStrategy
+    },
     ConstantsService,
     AuthStorageService,
     APIService,
     AuthService,
     UsersService,
-    RequestsService
+    TasksService
   ],
   entryComponents: [
     TableUserStatusComponent,
-    TableUserRoleComponent
+    TableUserRoleComponent,
+    CompletedTaskActionsComponent,
+    NewTaskActionsComponent,
+    PersonalTaskActionsComponent,
+    TaskAssignmentComponent
   ],
   bootstrap: [AppComponent]
 })

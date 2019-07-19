@@ -1,11 +1,11 @@
-const { knexRF } = require('../../db/config');
+const { knex } = require('../../db/config');
 const { tables } = require('../constants');
 const { tokenGenerator } = require('../generators');
 const { checkPassword } = require('./hasher');
 
 module.exports = (username, password) => {
     const authToken = tokenGenerator.generateAuthToken();
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .select('password')
         .where({
             username: username
@@ -15,7 +15,7 @@ module.exports = (username, password) => {
             return checkPassword(password, user.password);
         })
         .then(() => {
-            return knexRF(tables.TABLE_USERS)
+            return knex(tables.TABLE_USERS)
                 .update({
                     auth_token: authToken
                 })

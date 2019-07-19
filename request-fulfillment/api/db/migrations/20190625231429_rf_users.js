@@ -1,5 +1,7 @@
+const tables = require('../../helpers/constants/tables');
+
 exports.up = (knex) => {
-    return knex.schema.createTable('users', (table) => {
+    return knex.schema.createTable(tables.TABLE_USERS, (table) => {
         table.increments('id').primary();
         table.string('username').notNullable().unique();
         table.string('first_name').notNullable();
@@ -13,5 +15,5 @@ exports.up = (knex) => {
 };
 
 exports.down = (knex) => {
-    return knex.schema.dropTable('users');
+    return knex.schema.dropTable(tables.TABLE_USERS);
 };

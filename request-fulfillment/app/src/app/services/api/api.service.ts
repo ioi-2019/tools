@@ -4,8 +4,12 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ConstantsService } from '../local-helpers/contants.service';
 import { AuthStorageService } from '../local-helpers/auth-storage.service';
 
+const STATUS_SUCCESS = 'success';
+const STATUS_FAIL = 'fail';
+const STATUS_AUTH_FAIL = 'auth_fail';
+
 export interface APIResponse {
-    status: string;
+    status: 'success' | 'fail' | 'auth_fail';
     data?: {
         [key: string]: any
     };
@@ -34,7 +38,7 @@ export class APIService {
             this.httpClient.get(this.constantsService.API_URL + routeURL, { headers: headers, params: params })
                 .subscribe((res: any) => {
                     const status = res.status;
-                    if (status === 'auth_fail') {
+                    if (status === STATUS_AUTH_FAIL) {
                         resolve(res);
                         this.authStorageService.clearLoginDetails();
                         this.router.navigate(['/login']);
@@ -54,7 +58,7 @@ export class APIService {
             this.httpClient.post(this.constantsService.API_URL + routeURL, JSON.stringify(data), { headers: headers })
                 .subscribe((res: any) => {
                     const status = res.status;
-                    if (status === 'auth_fail') {
+                    if (status === STATUS_AUTH_FAIL) {
                         resolve(res);
                         this.authStorageService.clearLoginDetails();
                         this.router.navigate(['/login']);

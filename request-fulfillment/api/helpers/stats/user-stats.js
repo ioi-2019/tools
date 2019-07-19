@@ -1,8 +1,8 @@
-const { knexRF } = require('../../db/config');
+const { knex } = require('../../db/config');
 const tables = require('../constants/tables');
 
 const allStats = () => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .select('*')
         .then((users) => {
             return Promise.resolve(users);

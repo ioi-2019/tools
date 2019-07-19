@@ -1,14 +1,14 @@
-const { knexRF } = require('../../db/config');
+const { knex } = require('../../db/config');
 const tables = require('../constants/tables');
 
 // TODO: complete
 
 const logReply = (userId, taskId) => {
-    return knexRF(tables.TABLE_TASK_LOGS)
+    return knex(tables.TABLE_TASK_LOGS)
         .insert({
             user_id: userId,
             task_id: taskId,
-            logged_at: knexRF.fn.now()
+            logged_at: knex.fn.now()
         })
         .then((tasks) => {
             const rows = tasks.length;

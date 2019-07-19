@@ -1,4 +1,4 @@
-const { knexRF } = require('../../db/config');
+const { knex } = require('../../db/config');
 const tables = require('../../helpers/constants/tables');
 
 const checkAdmin = (username, authToken) => {
@@ -17,7 +17,7 @@ const checkUser = (username, authToken) => {
 };
 
 const checkToken = (params) => {
-    return knexRF(tables.TABLE_USERS)
+    return knex(tables.TABLE_USERS)
         .select('*')
         .where(params)
         .first()
