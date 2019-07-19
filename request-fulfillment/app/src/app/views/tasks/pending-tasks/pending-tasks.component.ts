@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthStorageService } from '../../../services/local-helpers/auth-storage.service';
 import { LocalDataSource } from 'ng2-smart-table';
-import { TableTaskStatusComponent } from '../../../components/table-task-status/table-task-status';
 import { TasksService } from '../../../services/api/tasks.service';
+import { NewTaskActionsComponent } from '../../../components/new-task-actions/new-task-actions.component';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-pending-tasks',
@@ -49,26 +50,29 @@ export class PendingTasksComponent implements OnInit {
           width: '100px',
         },
         question_timestamp: {
-          title: 'Date'
+          title: 'Date',
+          valuePrepareFunction: (value) => {
+            return moment(value).format('HH:mm DD/MM/YYYY').toString();
+          }
+        },
+        author: {
+          title: 'Author'
         },
         subject: {
           title: 'Subject'
         },
-        text: {
-          title: 'Text'
-        },
-        // is_approved: {
-        //   title: 'Status',
-        //   width: '200px',
-        //   type: 'custom',
-        //   filter: false,
-        //   renderComponent: TableTaskStatusComponent,
-        //   onComponentInitFunction: (instance) => {
-        //     instance.save.subscribe(row => {
-        //       this.pendingTasks.remove(row);
-        //     });
-        //   }
-        // }
+        actions: {
+          title: 'Actions',
+          width: '320px',
+          type: 'custom',
+          filter: false,
+          renderComponent: NewTaskActionsComponent,
+          onComponentInitFunction: (instance) => {
+            instance.save.subscribe(row => {
+              this.pendingTasks.remove(row);
+            });
+          }
+        }
       }
     };
     this.tableSettings = Object.assign({}, settings);

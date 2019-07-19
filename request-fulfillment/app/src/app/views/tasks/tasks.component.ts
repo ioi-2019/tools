@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.scss'],
-  template: '<ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>',
+//   template: '<ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>',
 })
 export class TasksComponent implements OnInit {
     settings = {

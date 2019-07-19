@@ -60,13 +60,34 @@ const assignUser = (taskID, userID) => {
 };
 
 const unassignUser = (taskID, userID) => {
-    // TODO: Security issue: user with id 2 can unassign user 1 from own task. is it okay? 
+    // TODO: Security issue: user with id 2 can unassign user 1 from own task. is it okay?
     return unbindAdminFromTask(taskID)
         .then(() => {
             return removeTaskAssignee(taskID, userID);
         })
         .then(() => {
             return Promise.resolve();
+        })
+        .catch((err) => {
+            return Promise.reject(err);
+        });
+};
+
+const completeTask = (taskID, userID) => {
+    return knex(tables.TABLE_TASKS)
+        .update('completed_at', knex.fn.now())
+        .where({
+            question_id: taskID,
+            rf_user_id: userID
+        })
+        .returning('*')
+        .then((tasks) => {
+            const task = tasks[0];
+            if (task) {
+                return Promise.resolve();
+            } else {
+                throw new Error(errors.ERR_ERROR_OCCURED);
+            }
         })
         .catch((err) => {
             return Promise.reject(err);
@@ -178,6 +199,7 @@ const removeTaskAssignee = (taskID, userID) => {
 
 module.exports = {
     replyTask,
+    completeTask,
     assignUser,
     unassignUser
 };

@@ -1,14 +1,18 @@
 const { knex } = require('../../db/config');
-const { tables } = require('../constants');
+const { tables, errors } = require('../constants');
 
 const approveUser = (id) => {
     return knex(tables.TABLE_USERS)
         .update('is_approved', true)
         .where('id', id)
         .returning('*')
-        .then((user) => {
-            console.log(user);
-            return Promise.resolve();
+        .then((users) => {
+            const user = users[0];
+            if (user) {
+                return Promise.resolve();
+            } else {
+                throw new Error(errors.ERR_ERROR_OCCURED);
+            }
         })
         .catch((err) => {
             return Promise.reject(err);
@@ -36,9 +40,13 @@ const giveAdminPrivilege = (id) => {
             is_approved: true
         })
         .returning('*')
-        .then((user) => {
-            console.log(user);
-            return Promise.resolve();
+        .then((users) => {
+            const user = users[0];
+            if (user) {
+                return Promise.resolve();
+            } else {
+                throw new Error(errors.ERR_ERROR_OCCURED);
+            }
         })
         .catch((err) => {
             return Promise.reject(err);
@@ -54,9 +62,13 @@ const takeAdminPrivilege = (id) => {
             is_superadmin: false
         })
         .returning('*')
-        .then((user) => {
-            console.log(user);
-            return Promise.resolve();
+        .then((users) => {
+            const user = users[0];
+            if (user) {
+                return Promise.resolve();
+            } else {
+                throw new Error(errors.ERR_ERROR_OCCURED);
+            }
         })
         .catch((err) => {
             return Promise.reject(err);

@@ -22,6 +22,10 @@ export class UsersService {
         return this.apiService.sendGetRequest(data, '/users/pending');
     }
 
+    searchUsers(data) {
+        return this.apiService.sendGetRequest(data, '/users/search');
+    }
+
     approveUser(userID, data) {
         return this.apiService.sendPostRequest(data, `/users/${userID}/manage/approve`);
     }

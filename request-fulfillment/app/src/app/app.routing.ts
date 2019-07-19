@@ -10,7 +10,7 @@ import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { UsersComponent } from './views/users/users.component';
 import { TasksComponent } from './views/tasks/tasks.component';
-import { TaskEditComponent } from './views/task-edit/task-edit.component';
+import { TaskComponent } from './views/task/task.component';
 import { UserEditComponent } from './views/user-edit/user-edit.component';
 import { LogoutComponent } from './views/logout/logout.component';
 import { ActiveUsersComponent } from './views/users/active-users/active-users.component';
@@ -24,41 +24,6 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
-  },
-  {
-    path: '404',
-    component: P404Component,
-    data: {
-      title: 'Page 404'
-    }
-  },
-  {
-    path: '500',
-    component: P500Component,
-    data: {
-      title: 'Page 500'
-    }
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    data: {
-      title: 'Login'
-    }
-  },
-  {
-    path: 'logout',
-    component: LogoutComponent,
-    data: {
-      title: 'Logout'
-    }
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: {
-      title: 'Register'
-    }
   },
   {
     path: '',
@@ -117,10 +82,10 @@ export const routes: Routes = [
         }
       },
       {
-        path: 'task-edit',
-        component: TaskEditComponent,
+        path: 'task/:id',
+        component: TaskComponent,
         data: {
-          title: 'Edit Task'
+          title: 'Task'
         }
       },
       {
@@ -163,6 +128,41 @@ export const routes: Routes = [
         loadChildren: './views/widgets/widgets.module#WidgetsModule'
       }
     ]
+  },
+  {
+    path: '404',
+    component: P404Component,
+    data: {
+      title: 'Page 404'
+    }
+  },
+  {
+    path: '500',
+    component: P500Component,
+    data: {
+      title: 'Page 500'
+    }
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: {
+      title: 'Login'
+    }
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent,
+    data: {
+      title: 'Logout'
+    }
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    data: {
+      title: 'Register'
+    }
   },
   { path: '**', component: P404Component }
 ];

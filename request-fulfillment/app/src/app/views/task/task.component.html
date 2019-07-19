@@ -1,0 +1,96 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-7">
+      <div *ngIf="isTaskLoaded" class="card">
+        <div class="card-header">
+          Subject: {{ questionSubject }}
+        </div>
+        <div class="card-body">
+          <form action="" method="post">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="nf-question">Question</label>
+                <textarea type="text" [(ngModel)]="questionText" id="nf-question" name="nf-question"
+                  class="form-control" autocomplete="current-question" rows="8" disabled>
+                </textarea>
+              </div>
+              <div class="form-group col-md-12">
+                <label for="nf-answer">Answer</label>
+                <textarea type="text" [(ngModel)]="replyText" id="nf-answer" name="nf-answer" class="form-control"
+                  autocomplete="current-answer" rows="8" [disabled]="!isOwnTask || status !== 'in_progress'">
+                </textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div *ngIf="isOwnTask && status === 'in_progress'" class="card-footer">
+          <button type="submit" (click)="reply()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
+            Reply
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div *ngIf="isTaskLoaded" class="card">
+        <div class="card-header">
+          Task Information
+        </div>
+        <div class="card-body">
+          <form action="" method="post">
+            <div class="row">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td class="custom-no-top-border">Task ID</td>
+                    <td class="custom-no-top-border">{{ taskID }}</td>
+                  </tr>
+                  <tr>
+                    <td>Task Status</td>
+                    <td>
+                      <div *ngIf="status === 'new'" class="col-12 text-center">
+                        <h5><span class="badge badge-danger">new</span></h5>
+                      </div>
+                      <div *ngIf="status === 'in_progress'" class="col-12 text-center">
+                        <h5><span class="badge badge-primary">in progress</span></h5>
+                      </div>
+                      <div *ngIf="status === 'completed'" class="col-12 text-center">
+                        <h5><span class="badge badge-success">completed</span></h5>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Contestant Username</td>
+                    <td>{{ contestantUsername }}</td>
+                  </tr>
+                  <tr>
+                    <td>Contestant Full Name</td>
+                    <td>{{ contestantFullName }}</td>
+                  </tr>
+                  <tr>
+                    <td>Date</td>
+                    <td>{{ questionDate }}</td>
+                  </tr>
+                  <tr *ngIf="status !== 'new'">
+                    <td>Assignee Username</td>
+                    <td>{{ assigneeUsername }}</td>
+                  </tr>
+                  <tr *ngIf="status !== 'new'">
+                    <td>Assignee Full Name</td>
+                    <td>{{ assigneeFullName }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </form>
+        </div>
+        <div *ngIf="isOwnTask && status === 'in_progress'" class="card-footer">
+          <button type="submit" (click)="complete()" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i>
+            Complete
+          </button>
+          <button type="reset" (click)="cancel()" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i>
+            Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

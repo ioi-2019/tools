@@ -10,6 +10,10 @@ export class TasksService {
         private apiService: APIService
     ) { }
 
+    getTask(taskID, data) {
+        return this.apiService.sendGetRequest(data, `/tasks/${taskID}`);
+    }
+
     getTasks(data) {
         return this.apiService.sendGetRequest(data, '/tasks');
     }
@@ -19,15 +23,27 @@ export class TasksService {
     }
 
     getPendingTasks(data) {
-        return this.apiService.sendGetRequest(data, '/tasks/pending');
+        return this.apiService.sendGetRequest(data, '/tasks/new');
     }
 
     getCompletedTasks(data) {
         return this.apiService.sendGetRequest(data, '/tasks/completed');
     }
 
-    reply(requestID, data) {
-        return this.apiService.sendPostRequest(data, `/tasks/${requestID}/manage/reply`);
+    assignUser(taskID, data) {
+        return this.apiService.sendPostRequest(data, `/tasks/${taskID}/manage/assign`);
+    }
+
+    unassignUser(taskID, data) {
+        return this.apiService.sendPostRequest(data, `/tasks/${taskID}/manage/unassign`);
+    }
+
+    replyTask(taskID, data) {
+        return this.apiService.sendPostRequest(data, `/tasks/${taskID}/manage/reply`);
+    }
+
+    completeTask(taskID, data) {
+        return this.apiService.sendPostRequest(data, `/tasks/${taskID}/manage/complete`);
     }
 
 }

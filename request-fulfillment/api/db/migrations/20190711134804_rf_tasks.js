@@ -9,6 +9,7 @@ exports.up = (knex) => {
         table.foreign('rf_user_id').references('id').inTable('rf_users').onDelete('RESTRICT').onUpdate('CASCADE');
         table.timestamp('created_at').notNullable();
         table.timestamp('removed_at');
+        table.timestamp('completed_at');
     });
 };
 

@@ -98,10 +98,28 @@ router.post('/:id/manage/reply', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.post('/:id/manage/assign', (req, res, next) => {
+router.post('/:id/manage/complete', (req, res, next) => {
     const taskID = req.params.id;
-    const { user_id } = req.body;
-    manageTasks.assignUser(taskID, user_id)
+    const { username } = req.body;
+    return getUser.getUserByUsername(username)
+        .then((user) => {
+            return manageTasks.completeTask(taskID, user.id);
+        })
+        .then(() => {
+            res.status(200).json({
+                status: 'success'
+            });
+        })
+        .catch((err) => next(err));
+});
+
+router.post('/:id/manage/assign/', (req, res, next) => {
+    const taskID = req.params.id;
+    const { assignee_username } = req.body;
+    return getUser.getUserByUsername(assignee_username)
+        .then((user) => {
+            return manageTasks.assignUser(taskID, user.id);
+        })
         .then(() => {
             res.status(200).json({
                 status: 'success'
@@ -112,8 +130,11 @@ router.post('/:id/manage/assign', (req, res, next) => {
 
 router.post('/:id/manage/unassign', (req, res, next) => {
     const taskID = req.params.id;
-    const { user_id } = req.body;
-    manageTasks.unassignUser(taskID, user_id)
+    const { username } = req.body;
+    return getUser.getUserByUsername(username)
+        .then((user) => {
+            return manageTasks.unassignUser(taskID, user.id);
+        })
         .then(() => {
             res.status(200).json({
                 status: 'success'
