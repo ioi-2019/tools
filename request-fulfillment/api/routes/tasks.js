@@ -4,7 +4,7 @@ const { checkUser } = require('../middleware/auth');
 const { getTasks, manageTasks } = require('../helpers/tasks');
 const { getUser } = require('../helpers/users');
 
-router.get('/', (req, res, next) => {
+router.get('/', checkUser(), (req, res, next) => {
     getTasks.getAllTasks()
         .then((tasks) => {
             res.status(200).json({
@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.get('/personal', (req, res, next) => {
+router.get('/personal', checkUser(), (req, res, next) => {
     const { username } = req.query;
     getUser.getUserByUsername(username)
         .then((user) => {
@@ -34,7 +34,7 @@ router.get('/personal', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.get('/new', (req, res, next) => {
+router.get('/new', checkUser(), (req, res, next) => {
     getTasks.getNewTasks()
         .then((tasks) => {
             res.status(200).json({
@@ -47,7 +47,7 @@ router.get('/new', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.get('/completed', (req, res, next) => {
+router.get('/completed', checkUser(), (req, res, next) => {
     getTasks.getCompletedTasks()
         .then((tasks) => {
             res.status(200).json({
@@ -60,7 +60,7 @@ router.get('/completed', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', checkUser(), (req, res, next) => {
     const taskID = req.params.id;
     getTasks.getTaskById(taskID)
         .then((task) => {
@@ -74,7 +74,7 @@ router.get('/:id', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.post('/:id/manage/reply', (req, res, next) => {
+router.post('/:id/manage/reply', checkUser(), (req, res, next) => {
     const taskID = req.params.id;
     const { username, reply_subject, reply_text } = req.body;
     return getUser.getUserByUsername(username)
@@ -98,7 +98,7 @@ router.post('/:id/manage/reply', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.post('/:id/manage/complete', (req, res, next) => {
+router.post('/:id/manage/complete', checkUser(), (req, res, next) => {
     const taskID = req.params.id;
     const { username } = req.body;
     return getUser.getUserByUsername(username)
@@ -113,7 +113,7 @@ router.post('/:id/manage/complete', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.post('/:id/manage/assign/', (req, res, next) => {
+router.post('/:id/manage/assign/', checkUser(), (req, res, next) => {
     const taskID = req.params.id;
     const { assignee_username } = req.body;
     return getUser.getUserByUsername(assignee_username)
@@ -128,7 +128,7 @@ router.post('/:id/manage/assign/', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.post('/:id/manage/unassign', (req, res, next) => {
+router.post('/:id/manage/unassign', checkUser(), (req, res, next) => {
     const taskID = req.params.id;
     const { username } = req.body;
     return getUser.getUserByUsername(username)

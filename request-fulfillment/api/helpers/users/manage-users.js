@@ -37,7 +37,9 @@ const giveAdminPrivilege = (id) => {
         .update('is_admin', true)
         .where({
             id: id,
-            is_approved: true
+            is_approved: true,
+            is_admin: false,
+            is_superadmin: false
         })
         .returning('*')
         .then((users) => {

@@ -36,7 +36,10 @@ export class PersonalTasksComponent implements OnInit {
     })
       .then((res) => {
         if (res.status === 'success') {
-          this.personalTasks.load(res.data.tasks);
+          this.personalTasks.load(res.data.tasks)
+            .then(() => {
+              this.personalTasks.setPaging(1, 15, true);
+            });
         }
       });
   }

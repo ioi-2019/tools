@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { checkUser } = require('../middleware/auth');
+const { checkUser, checkAdmin } = require('../middleware/auth');
 const users = require('../helpers/users');
 
-router.get('/', (req, res, next) => {
+router.get('/', checkUser(), (req, res, next) => {
     users.getUsers.getAllUsers()
         .then((users) => {
             res.status(200).json({
@@ -16,7 +16,7 @@ router.get('/', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.get('/active', (req, res, next) => {
+router.get('/active', checkUser(), (req, res, next) => {
     users.getUsers.getActiveUsers()
         .then((users) => {
             res.status(200).json({
@@ -29,7 +29,7 @@ router.get('/active', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.get('/pending', (req, res, next) => {
+router.get('/pending', checkUser(), (req, res, next) => {
     users.getUsers.getPendingUsers()
         .then((users) => {
             res.status(200).json({
@@ -42,7 +42,7 @@ router.get('/pending', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.get('/search', (req, res, next) => {
+router.get('/search', checkUser(), (req, res, next) => {
     const { query } = req.query;
     return users.getUsers.searchUsers(query)
         .then((users) => {
@@ -56,7 +56,7 @@ router.get('/search', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', checkUser(), (req, res, next) => {
     const userID = Number(req.params.id);
     users.getUser.getUserById(userID)
         .then((user) => {
@@ -70,7 +70,7 @@ router.get('/:id', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.post('/:id/manage/give-admin-privilege', (req, res, next) => {
+router.post('/:id/manage/give-admin-privilege', checkAdmin(), (req, res, next) => {
     const userID = Number(req.params.id);
     users.manageUsers.giveAdminPrivilege(userID)
         .then(() => {
@@ -81,7 +81,7 @@ router.post('/:id/manage/give-admin-privilege', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.post('/:id/manage/take-admin-privilege', (req, res, next) => {
+router.post('/:id/manage/take-admin-privilege', checkAdmin(), (req, res, next) => {
     const userID = Number(req.params.id);
     users.manageUsers.takeAdminPrivilege(userID)
         .then(() => {
@@ -92,7 +92,7 @@ router.post('/:id/manage/take-admin-privilege', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.post('/:id/manage/approve', (req, res, next) => {
+router.post('/:id/manage/approve', checkAdmin(), (req, res, next) => {
     const userID = Number(req.params.id);
     users.manageUsers.approveUser(userID)
         .then(() => {
@@ -103,7 +103,7 @@ router.post('/:id/manage/approve', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.post('/:id/manage/reject', (req, res, next) => {
+router.post('/:id/manage/reject', checkAdmin(), (req, res, next) => {
     const userID = Number(req.params.id);
     users.manageUsers.rejectUser(userID)
         .then(() => {

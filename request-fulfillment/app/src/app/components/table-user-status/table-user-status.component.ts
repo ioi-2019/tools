@@ -34,7 +34,7 @@ export class TableUserStatusComponent implements ViewCell, OnInit {
     private usersService: UsersService,
     private authStorageService: AuthStorageService
   ) {
-
+    this.hasAdminPrivilege = false;
   }
 
   ngOnInit() {

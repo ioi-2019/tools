@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { login, register, logout } = require('../helpers/auth');
 const { respondSuccess } = require('../helpers/responder');
+const { checkUser } = require('../middleware/auth');
 
 router.post('/login', (req, res, next) => {
     const { username, password } = req.body;
@@ -17,7 +18,7 @@ router.post('/login', (req, res, next) => {
         .catch((err) => next(err));
 });
 
-router.post('/logout', (req, res, next) => {
+router.post('/logout', checkUser(), (req, res, next) => {
     const { username, auth_token } = req.body;
     logout(username, auth_token)
         .then(() => {
@@ -27,7 +28,9 @@ router.post('/logout', (req, res, next) => {
 });
 
 router.post('/register', (req, res, next) => {
-    const { username, first_name, last_name, password } = req.body;
+    const { first_name, last_name, password } = req.body;
+    let { username } = req.body;
+    username = username.toLowerCase();
     register({
         username,
         first_name,

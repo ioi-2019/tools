@@ -36,7 +36,10 @@ export class PendingTasksComponent implements OnInit {
     })
       .then((res) => {
         if (res.status === 'success') {
-          this.pendingTasks.load(res.data.tasks);
+          this.pendingTasks.load(res.data.tasks)
+            .then(() => {
+              this.pendingTasks.setPaging(1, 15, true);
+            });
         }
       });
   }

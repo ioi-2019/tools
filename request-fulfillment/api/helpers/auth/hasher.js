@@ -1,4 +1,6 @@
 const bcrypt = require('bcrypt');
+const { errors } = require('../constants');
+const AppError = require('../errors/app-error');
 
 const hashPassword = (password) => {
     return bcrypt.genSalt()
@@ -19,7 +21,7 @@ const checkPassword = (password, hash) => {
             if (authenticated === true) {
                 return Promise.resolve();
             } else {
-                throw new Error('Passwords do not match');
+                throw new AppError(errors.ERR_PASSWORD_MISMATCH);
             }
         })
         .catch((err) => {

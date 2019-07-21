@@ -35,7 +35,10 @@ export class ActiveUsersComponent implements OnInit {
     })
       .then((res) => {
         if (res.status === 'success') {
-          this.activeUsers.load(res.data.users);
+          this.activeUsers.load(res.data.users)
+            .then(() => {
+              this.activeUsers.setPaging(1, 15, true);
+            });
         }
       });
   }
@@ -69,8 +72,8 @@ export class ActiveUsersComponent implements OnInit {
             }
           }
         },
-        action: {
-          title: 'Action',
+        actions: {
+          title: 'Actions',
           width: '250px',
           type: 'custom',
           filter: false,

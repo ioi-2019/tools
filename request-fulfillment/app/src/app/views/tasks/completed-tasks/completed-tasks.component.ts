@@ -36,7 +36,10 @@ export class CompletedTasksComponent implements OnInit {
     })
       .then((res) => {
         if (res.status === 'success') {
-          this.completedTasks.load(res.data.tasks);
+          this.completedTasks.load(res.data.tasks)
+            .then(() => {
+              this.completedTasks.setPaging(1, 15, true);
+            });
         }
       });
   }
