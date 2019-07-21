@@ -10,6 +10,7 @@ const STATUS_AUTH_FAIL = 'auth_fail';
 
 export interface APIResponse {
     status: 'success' | 'fail' | 'auth_fail';
+    message?: string;
     data?: {
         [key: string]: any
     };
@@ -46,7 +47,10 @@ export class APIService {
                         resolve(res);
                     }
                 }, (err) => {
-                    reject(err);
+                    resolve({
+                        status: 'fail',
+                        message: 'server_connection_failed'
+                    });
                 });
         });
     }
@@ -66,7 +70,10 @@ export class APIService {
                         resolve(res);
                     }
                 }, (err) => {
-                    reject(err);
+                    resolve({
+                        status: 'fail',
+                        message: 'server_connection_failed'
+                    });
                 });
         });
     }

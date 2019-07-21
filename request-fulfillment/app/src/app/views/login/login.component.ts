@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/api/auth.service';
 import { AuthStorageService } from '../../services/local-helpers/auth-storage.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private toastrService: ToastrService,
     private authService: AuthService,
     private authStorageService: AuthStorageService
   ) { }
@@ -36,6 +38,12 @@ export class LoginComponent implements OnInit {
           this.authStorageService.setUsername(res.data.account.username);
           this.authStorageService.setAuthToken(res.data.account.auth_token);
           this.router.navigateByUrl('/dashboard');
+        } else {
+          let errorMessage = 'Login failed';
+          if (res.message) {
+            errorMessage = res.message;
+          }
+          this.toastrService.error(errorMessage);
         }
       });
   }

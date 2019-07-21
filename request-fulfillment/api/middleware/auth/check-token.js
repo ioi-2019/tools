@@ -5,14 +5,16 @@ const checkAdmin = (username, authToken) => {
     return checkToken({
         username: username,
         auth_token: authToken,
-        is_admin: true
+        is_admin: true,
+        is_approved: true
     });
 };
 
 const checkUser = (username, authToken) => {
     return checkToken({
         username: username,
-        auth_token: authToken
+        auth_token: authToken,
+        is_approved: true
     });
 };
 

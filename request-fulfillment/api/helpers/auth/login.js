@@ -1,18 +1,28 @@
 const { knex } = require('../../db/config');
-const { tables } = require('../constants');
+const { tables, errors } = require('../constants');
 const { tokenGenerator } = require('../generators');
 const { checkPassword } = require('./hasher');
+const AppError = require('../errors/app-error');
 
 module.exports = (username, password) => {
     const authToken = tokenGenerator.generateAuthToken();
     return knex(tables.TABLE_USERS)
-        .select('password')
+        .select('password', 'is_approved')
         .where({
             username: username
         })
         .first()
         .then((user) => {
-            return checkPassword(password, user.password);
+            if (user) {
+                console.log(user)
+                if (user.is_approved === true) {
+                    return checkPassword(password, user.password);
+                } else {
+                    throw new AppError(errors.ERR_USER_NOT_APPROVED);
+                }
+            } else {
+                throw new AppError(errors.ERR_USER_NOT_FOUND);
+            }
         })
         .then(() => {
             return knex(tables.TABLE_USERS)

@@ -6,19 +6,18 @@ let authToken = null;
 const checkAdmin = () => {
     return (req, res, next) => {
         normalizeParams(req);
-        checkToken.checkAdmin(username, authToken)
+        return checkToken.checkAdmin(username, authToken)
             .then((passed) => {
                 if (passed === true) {
                     next();
+                    return null;
                 } else {
                     throw new Error('Authentication failed');
                 }
             })
             .catch((err) => {
-                // TODO: clean up this part
                 res.status(200).json({
-                    status: 'fail',
-                    message: 'error_occured'
+                    status: 'auth_fail'
                 });
             });
     };
@@ -27,18 +26,18 @@ const checkAdmin = () => {
 const checkUser = () => {
     return (req, res, next) => {
         normalizeParams(req);
-        checkToken.checkUser(username, authToken)
+        return checkToken.checkUser(username, authToken)
             .then((passed) => {
                 if (passed === true) {
                     next();
+                    return null;
                 } else {
                     throw new Error('Authentication failed');
                 }
             })
             .catch((err) => {
                 res.status(200).json({
-                    status: 'fail',
-                    message: 'error_occured'
+                    status: 'auth_fail'
                 });
             });
     };
@@ -47,10 +46,10 @@ const checkUser = () => {
 const normalizeParams = (req) => {
     if (req.method === 'GET') {
         username = req.query.username;
-        authToken = req.query.authToken;
+        authToken = req.query.auth_token;
     } else if (req.method === 'POST') {
         username = req.body.username;
-        authToken = req.body.authToken;
+        authToken = req.body.auth_token;
     }
 };
 

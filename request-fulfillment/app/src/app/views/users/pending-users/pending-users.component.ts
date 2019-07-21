@@ -35,7 +35,10 @@ export class PendingUsersComponent implements OnInit {
     })
       .then((res) => {
         if (res.status === 'success') {
-          this.pendingUsers.load(res.data.users);
+          this.pendingUsers.load(res.data.users)
+            .then(() => {
+              this.pendingUsers.setPaging(1, 15, true);
+            });
         }
       });
   }
@@ -57,8 +60,8 @@ export class PendingUsersComponent implements OnInit {
         last_name: {
           title: 'Last Name'
         },
-        is_approved: {
-          title: 'Status',
+        actions: {
+          title: 'Actions',
           width: '200px',
           type: 'custom',
           filter: false,
