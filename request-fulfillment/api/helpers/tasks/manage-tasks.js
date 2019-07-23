@@ -42,10 +42,8 @@ const generateSignature = (firstName, lastName) => {
 };
 
 const assignUser = (taskID, userID) => {
-    let adminID = null;
-    return getUser.getCMSAdmin()
-        .then((admin) => {
-            adminID = admin.id;
+    return getUser.getCMSAdminID()
+        .then((adminID) => {
             return bindAdminToTask(taskID, adminID);
         })
         .then(() => {
