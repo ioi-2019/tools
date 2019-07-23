@@ -33,6 +33,13 @@
             res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
             next();
         });
+
+        // *** check required env variables *** //
+        if (process.env.ADMIN_ID == null || process.env.ADMIN_ID === '') {
+            throw new Error('Environment variable ADMIN_ID not found or empty');
+        } else if (process.env.CONTEST_ID == null || process.env.CONTEST_ID === '') {
+            throw new Error('Environment variable CONTEST_ID not found or empty');
+        }
     };
 }
 )(module.exports);
