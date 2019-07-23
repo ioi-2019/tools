@@ -13,6 +13,8 @@ import * as moment from 'moment';
 })
 export class TaskComponent implements OnInit, OnDestroy {
 
+    readonly REPLY_SUBJECT = 'HTC answer';
+
     taskID: number;
     paramsListener: Subscription;
     questionSubject: string;
@@ -81,7 +83,7 @@ export class TaskComponent implements OnInit, OnDestroy {
         this.tasksService.replyTask(this.taskID, {
             username: username,
             auth_token: authToken,
-            reply_subject: this.replySubject,
+            reply_subject: this.REPLY_SUBJECT,
             reply_text: this.replyText
         })
             .then((res) => {
