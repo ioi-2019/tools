@@ -31,9 +31,9 @@ export class DefaultLayoutComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    // if (!this.authStorageService.getAuthStatus()) {
-    //   this.router.navigateByUrl('/login');
-    // }
+    if (!this.authStorageService.getAuthStatus()) {
+      this.router.navigateByUrl('/login');
+    }
   }
 
   ngOnDestroy(): void {
