@@ -8,10 +8,9 @@
 
 # COPY --chown=node:node dist .
 
-FROM nginx:alpine
+FROM nginx
 
-COPY ./dist /usr/share/nginx/html
+COPY dist /usr/share/nginx/html/
+COPY docker/nginx-conf/ /etc/nginx/conf.d/
 
 EXPOSE 80
-
-# COPY --from=node . /usr/share/nginx/html/
