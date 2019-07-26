@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthStorageService } from '../../../services/local-helpers/auth-storage.service';
 import { LocalDataSource } from 'ng2-smart-table';
 import { TasksService } from '../../../services/api/tasks.service';
+import { ConstantsService } from '../../../services/local-helpers/contants.service';
 import { NewTaskActionsComponent } from '../../../components/new-task-actions/new-task-actions.component';
 import * as moment from 'moment';
 
@@ -10,21 +11,34 @@ import * as moment from 'moment';
   templateUrl: './pending-tasks.component.html',
   styleUrls: ['./pending-tasks.component.scss']
 })
-export class PendingTasksComponent implements OnInit {
+export class PendingTasksComponent implements OnInit, OnDestroy {
 
   pendingTasks: LocalDataSource;
   tableSettings = {};
+  refreshTimer: NodeJS.Timeout;
+  isDataLoaded: boolean;
 
   constructor(
     private tasksService: TasksService,
+    private constantsService: ConstantsService,
     private authStorageService: AuthStorageService
   ) {
     this.pendingTasks = new LocalDataSource();
+    this.isDataLoaded = false;
   }
 
   ngOnInit() {
     this.updateTableSettings();
     this.loadTableData();
+    this.refreshTimer = setInterval(() => {
+      this.loadTableData();
+    }, this.constantsService.PENDING_TASKS_REFRESH_INTERVAL);
+  }
+
+  ngOnDestroy() {
+    if (this.refreshTimer) {
+      clearInterval(this.refreshTimer);
+    }
   }
 
   private loadTableData() {
@@ -38,7 +52,10 @@ export class PendingTasksComponent implements OnInit {
         if (res.status === 'success') {
           this.pendingTasks.load(res.data.tasks)
             .then(() => {
-              this.pendingTasks.setPaging(1, 15, true);
+              if (this.isDataLoaded === false) {
+                this.pendingTasks.setPaging(1, 15, true);
+                this.isDataLoaded = true;
+              }
             });
         }
       });

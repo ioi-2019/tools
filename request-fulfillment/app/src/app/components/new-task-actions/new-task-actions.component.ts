@@ -66,6 +66,7 @@ export class NewTaskActionsComponent implements ViewCell, OnInit {
       .then((res) => {
         if (res.status === 'success') {
           this.save.emit(this.rowData);
+          this.router.navigate(['/personal-tasks']);
         }
       });
   }

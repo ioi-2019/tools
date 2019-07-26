@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthStorageService } from '../../../services/local-helpers/auth-storage.service';
 import { LocalDataSource } from 'ng2-smart-table';
 import { TasksService } from '../../../services/api/tasks.service';
+import { ConstantsService } from '../../../services/local-helpers/contants.service';
 import { CompletedTaskActionsComponent } from '../../../components/completed-task-actions/completed-task-actions.component';
 import * as moment from 'moment';
 
@@ -10,21 +11,34 @@ import * as moment from 'moment';
   templateUrl: './completed-tasks.component.html',
   styleUrls: ['./completed-tasks.component.scss']
 })
-export class CompletedTasksComponent implements OnInit {
+export class CompletedTasksComponent implements OnInit, OnDestroy {
 
   completedTasks: LocalDataSource;
   tableSettings = {};
+  refreshTimer: NodeJS.Timeout;
+  isDataLoaded: boolean;
 
   constructor(
     private tasksService: TasksService,
+    private constantsService: ConstantsService,
     private authStorageService: AuthStorageService
   ) {
     this.completedTasks = new LocalDataSource();
+    this.isDataLoaded = false;
   }
 
   ngOnInit() {
     this.updateTableSettings();
     this.loadTableData();
+    this.refreshTimer = setInterval(() => {
+      this.loadTableData();
+    }, this.constantsService.COMPLETED_TASKS_REFRESH_INTERVAL);
+  }
+
+  ngOnDestroy() {
+    if (this.refreshTimer) {
+      clearInterval(this.refreshTimer);
+    }
   }
 
   private loadTableData() {
@@ -38,7 +52,10 @@ export class CompletedTasksComponent implements OnInit {
         if (res.status === 'success') {
           this.completedTasks.load(res.data.tasks)
             .then(() => {
-              this.completedTasks.setPaging(1, 15, true);
+              if (this.isDataLoaded === false) {
+                this.completedTasks.setPaging(1, 15, true);
+                this.isDataLoaded = true;
+              }
             });
         }
       });
