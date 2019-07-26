@@ -1,0 +1,32 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+<body>
+
+
+
+<form action="save" th:object="${seatFind}" method="post">
+
+
+
+    <input type="hidden" name="ipAddress" th:value="${seatFind.ipAddress}"><br>
+    <input type="hidden" name="login" th:value="${seatFind.login}"><br>
+    <input type="hidden" name="macAddress" th:value="${seatFind.macAddress}"><br>
+    <input type="hidden" name="name" th:value="${seatFind.name}"><br>
+    <input type="hidden" name="surname" th:value="${seatFind.surname}"><br>
+
+
+
+
+        Seat: <input type="text" name="seat" th:value="${seatFind.seat}" style="width: 200px;height: 200px "><br>
+    <input type="hidden" name="id" th:value="${seatFind.id}" ><br>
+
+        <button type="submit">Save</button>
+    </div>
+</form>
+
+</body>
+
+
+
+</html>
