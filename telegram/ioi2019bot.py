@@ -1,9 +1,9 @@
 import telebot
 
 # file with comma delimited data 
-filepath = "/home/juser/telegrambot/final-contest.txt"
-fields = ["MAC","IP","Laptop","Seat","Name","Surname"]
- 
+filepath = "contestant-list.txt"
+fields = ["MAC","IP","Seat","User","Name","Surname"]
+
 f = open("ioi2019bot.key", "r")
 botKey = f.read(45)
 print(botKey)
@@ -18,12 +18,12 @@ def start_reading(message):
          bot.send_message(message.from_user.id,"Enter the contestant related data (seat, IP or name) to get more detailed information.")
       else:
          if len(message.text) < 3:
-             bot.send_message(message.from_user.id,"Please enter at least 3 characters")  
+             bot.send_message(message.from_user.id,"Please enter at least 3 characters")
          else:
-             search_data(message)      
-   except:
-      print("exception: "+message.text)
- 
+             search_data(message)
+   except Exception as e:
+      print("Exception: Request "+message.text+" Error: "+str(e))
+
 def search_data(message):
    ret_msg = "No data found..."
 
@@ -42,6 +42,5 @@ def search_data(message):
 
    bot.send_message(message.from_user.id,ret_msg)
 
- 
-bot.polling(none_stop=True, interval=0)
 
+bot.polling(none_stop=True, interval=0)
