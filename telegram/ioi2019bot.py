@@ -2,7 +2,7 @@ import telebot
 
 # file with comma delimited data 
 filepath = "/home/juser/telegrambot/final-contest.txt"
-fields = ["Seat","Name","Surname","MAC","IP","Laptop"]
+fields = ["MAC","IP","Laptop","Seat","Name","Surname"]
  
 f = open("ioi2019bot.key", "r")
 botKey = f.read(45)
@@ -14,10 +14,8 @@ bot = telebot.TeleBot(botKey)
 
 def start_reading(message):
    try:
-      if message.text == "/salam":
-         bot.send_message(message.from_user.id,"Ay eleykum salam")
-      elif message.text == "/help":
-         bot.send_message(message.from_user.id,"Just type the data you want to find.")
+      if message.text == "/help":
+         bot.send_message(message.from_user.id,"Enter the contestant related data (seat, IP or name) to get more detailed information.")
       else:
          if len(message.text) < 3:
              bot.send_message(message.from_user.id,"Please enter at least 3 characters")  
