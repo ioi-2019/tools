@@ -32,11 +32,11 @@ public class ExportFromDatabase {
         }
 
         try {
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("DATA_Export.csv"), "UTF-8"));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("Export.csv"), "UTF-8"));
             for (ContestantData cd : contestantData) {
                 StringBuffer oneLine = new StringBuffer();
-                oneLine.append(cd.getId());
-                oneLine.append(CSV_SEPARATOR);
+//                oneLine.append(cd.getId());
+//                oneLine.append(CSV_SEPARATOR);
                 oneLine.append(cd.getMacAddress());
                 oneLine.append(CSV_SEPARATOR);
                 oneLine.append(cd.getIpAddress());
@@ -71,11 +71,11 @@ public class ExportFromDatabase {
         }
 
         try {
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), "UTF-8"));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path+"/Export.csv"), "UTF-8"));
             for (ContestantData cd : contestantData) {
                 StringBuffer oneLine = new StringBuffer();
-                oneLine.append(cd.getId());
-                oneLine.append(CSV_SEPARATOR);
+//                oneLine.append(cd.getId());
+//                oneLine.append(CSV_SEPARATOR);
                 oneLine.append(cd.getMacAddress());
                 oneLine.append(CSV_SEPARATOR);
                 oneLine.append(cd.getIpAddress());

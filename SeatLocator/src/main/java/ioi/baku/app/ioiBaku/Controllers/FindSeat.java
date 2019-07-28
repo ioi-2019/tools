@@ -35,7 +35,7 @@ public class FindSeat {
     @PostMapping("/save")
     public String update(@Valid @ModelAttribute ContestantData ctd) {
         System.out.println(ctd);
-        contestantRepository.save(ctd);
+        contestantRepository.updateSeat(ctd.getSeat(),ctd.getIpAddress());
         return "redirect:seat";
 
     }
