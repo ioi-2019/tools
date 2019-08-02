@@ -6,6 +6,15 @@
           Pending Tasks
         </div>
         <div class="card-body">
+          <ul style="display: block;">
+            <li style="display: inline-block; margin-right: 20px;">
+              Filters:
+            </li>
+            <li *ngFor="let filter of filters" style="display: inline-block; margin-right: 20px;">
+              <input type="checkbox" [ngModel]="filter.enabled" (ngModelChange)="manageUserFilter(filter.id)">
+              {{ filter.name }}
+            </li>
+          </ul>
           <ng2-smart-table [settings]="tableSettings" [source]="pendingTasks"></ng2-smart-table>
         </div>
       </div>

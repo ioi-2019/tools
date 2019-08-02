@@ -15,7 +15,7 @@ export class CompletedTasksComponent implements OnInit, OnDestroy {
 
   completedTasks: LocalDataSource;
   tableSettings = {};
-  refreshTimer: NodeJS.Timeout;
+  refreshTimer: any;
   isDataLoaded: boolean;
 
   constructor(
