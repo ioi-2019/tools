@@ -1,6 +1,7 @@
 const { knex } = require('../../db/config');
 const { tables, errors } = require('../constants');
 const AppError = require('../errors/app-error');
+const { getUserFilters } = require('./filters');
 
 const CONTEST_ID = process.env.CONTEST_ID;
 
@@ -137,9 +138,21 @@ const getPersonalTasks = (userID) => {
         });
 };
 
-const getNewTasks = () => {
+const getNewTasks = (userID) => {
     // TODO: do we really need to add assigned person to this query?
-    return getContestID()
+    let filterExp = '';
+    return getUserFilters(userID)
+        .then((filters) => {
+            if (filters.length > 0) {
+                filterExp = filters[0].code;
+                if (filters.length > 1) {
+                    for (let i = 1; i < filters.length; i++) {
+                        filterExp = filterExp + '|' + filters[i].code;
+                    }
+                }
+            }
+            return getContestID();
+        })
         .then((contestID) => {
             return knex(tables.CMS_TABLE_QUESTIONS + ' as q')
                 .select(
@@ -164,6 +177,7 @@ const getNewTasks = () => {
                     'u.id'
                 )
                 .where('c.id', contestID)
+                .andWhere('q.subject', '~*', filterExp)
                 .whereNull('admin_id')
                 .orderBy('q.question_timestamp', 'asc');
         })

@@ -46,4 +46,20 @@ export class TasksService {
         return this.apiService.sendPostRequest(data, `/tasks/${taskID}/manage/complete`);
     }
 
+    getFilters(data) {
+        return this.apiService.sendGetRequest(data, '/tasks/filters/');
+    }
+
+    getUserFilters(data) {
+        return this.apiService.sendGetRequest(data, '/tasks/filters/personal');
+    }
+
+    addUserFilter(data) {
+        return this.apiService.sendPostRequest(data, '/tasks/filters/personal/manage/add');
+    }
+
+    removeUserFilter(data) {
+        return this.apiService.sendPostRequest(data, '/tasks/filters/personal/manage/remove');
+    }
+
 }
