@@ -1,8 +1,11 @@
+const axios = require('axios');
 const { knex } = require('../../db/config');
 const { tables, errors } = require('../constants');
 const AppError = require('../errors/app-error');
 const { getUserFilters } = require('./filters');
 
+const CONTESTANT_API_IP = process.env.CONTESTANT_API_IP;
+const CONTESTANT_API_PORT = process.env.CONTESTANT_API_PORT;
 const CONTEST_ID = process.env.CONTEST_ID;
 
 const getTaskById = (taskID) => {
@@ -12,6 +15,7 @@ const getTaskById = (taskID) => {
 };
 
 const getTask = (params) => {
+    let task = null;
     return knex(tables.CMS_TABLE_QUESTIONS + ' as q')
         .select(
             'q.*',
@@ -23,9 +27,10 @@ const getTask = (params) => {
             'cms_u.username as contestant_username',
             'cms_u.first_name as contestant_first_name',
             'cms_u.last_name as contestant_last_name',
+            'p.ip as contestant_ip',
             'u.username as assignee_username',
             'u.first_name as assignee_first_name',
-            'u.last_name as assignee_last_name',
+            'u.last_name as assignee_last_name'
         )
         .leftJoin(
             tables.TABLE_TASKS + ' as t',
@@ -49,19 +54,17 @@ const getTask = (params) => {
         )
         .where(params)
         .first()
-        .then((task) => {
-            if (task) {
-                if (task.task_completed_at != null) {
-                    task['status'] = 'completed';
-                } else if (task.admin_id == null) {
-                    task['status'] = 'new';
-                } else {
-                    task['status'] = 'in_progress';
-                }
-                return Promise.resolve(task);
+        .then((foundTask) => {
+            if (foundTask) {
+                task = foundTask;
+                return getContestantSeat(task.contestant_ip);
             } else {
                 throw new AppError(errors.ERR_TASK_NOT_FOUND);
             }
+        })
+        .then((contestantSeat) => {
+            task['contestant_seat'] = contestantSeat;
+            return Promise.resolve(task);
         })
         .catch((err) => {
             return Promise.reject(err);
@@ -259,6 +262,21 @@ const getContest = () => {
         .catch((err) => {
             return Promise.reject(err);
         });
+};
+
+const getContestantSeat = (contestantIP) => {
+    return new Promise((resolve, reject) => {
+        axios.get(`http://${CONTESTANT_API_IP}:${CONTESTANT_API_PORT}/contestant/${contestantIP}`)
+            .then((res) => {
+                if (!res.data) {
+                    throw new Error();
+                }
+                return resolve(res.data.seat);
+            })
+            .catch((err) => {
+                return resolve('not_found');
+            });
+    });
 };
 
 module.exports = {
