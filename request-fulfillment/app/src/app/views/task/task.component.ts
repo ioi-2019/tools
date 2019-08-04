@@ -24,6 +24,7 @@ export class TaskComponent implements OnInit, OnDestroy {
     status: string;
     questionDate: string;
     contestantUsername: string;
+    contestantSeat: string;
     contestantFullName: string;
     assigneeUsername: string;
     assigneeFullName: string;
@@ -61,6 +62,7 @@ export class TaskComponent implements OnInit, OnDestroy {
                             this.status = task.status;
                             this.questionDate = moment(task.question_timestamp).format('HH:mm DD/MM/YYYY').toString();
                             this.contestantUsername = task.contestant_username;
+                            this.contestantSeat = task.contestant_seat;
                             this.contestantFullName = `${task.contestant_first_name} ${task.contestant_last_name}`;
                             this.assigneeUsername = task.assignee_username;
                             this.assigneeFullName = `${task.assignee_first_name} ${task.assignee_last_name}`;
