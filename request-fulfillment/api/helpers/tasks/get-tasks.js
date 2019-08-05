@@ -64,6 +64,13 @@ const getTask = (params) => {
         })
         .then((contestantSeat) => {
             task['contestant_seat'] = contestantSeat;
+            if (task.task_completed_at != null) {
+                task['status'] = 'completed';
+            } else if (task.admin_id == null) {
+                task['status'] = 'new';
+            } else {
+                task['status'] = 'in_progress';
+            }
             return Promise.resolve(task);
         })
         .catch((err) => {
