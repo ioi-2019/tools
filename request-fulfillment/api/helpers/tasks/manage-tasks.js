@@ -72,13 +72,39 @@ const unassignUser = (taskID, userID) => {
 };
 
 const completeTask = (taskID, userID) => {
-    return knex(tables.TABLE_TASKS)
-        .update('completed_at', knex.fn.now())
-        .where({
-            question_id: taskID,
-            rf_user_id: userID
+    return knex(tables.CMS_TABLE_QUESTIONS)
+        .select('*')
+        .where('id', taskID)
+        .first()
+        .then((task) => {
+            if (task.reply_timestamp != null) {
+                return Promise.resolve([task]);
+            } else {
+                return knex(tables.CMS_TABLE_QUESTIONS)
+                    .update({
+                        reply_timestamp: knex.fn.now(),
+                        reply_subject: '',
+                        reply_text: ''
+                    })
+                    .where('id', taskID)
+                    .whereNotNull('admin_id')
+                    .returning('*');
+            }
         })
-        .returning('*')
+        .then((tasks) => {
+            const task = tasks[0];
+            if (task) {
+                return knex(tables.TABLE_TASKS)
+                    .update('completed_at', knex.fn.now())
+                    .where({
+                        question_id: taskID,
+                        rf_user_id: userID
+                    })
+                    .returning('*');
+            } else {
+                throw new Error(errors.ERR_ERROR_OCCURED);
+            }
+        })
         .then((tasks) => {
             const task = tasks[0];
             if (task) {
