@@ -189,7 +189,7 @@ const getNewTasks = (userID) => {
                 .where('c.id', contestID)
                 .andWhere('q.subject', '~*', filterExp)
                 .whereNull('admin_id')
-                .orderBy('q.question_timestamp', 'asc');
+                .orderBy('q.question_timestamp', 'desc');
         })
         .then((tasks) => {
             return Promise.resolve(tasks);
