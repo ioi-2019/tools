@@ -273,9 +273,15 @@ const getContest = () => {
 
 const getContestantSeat = (contestantIP) => {
     return new Promise((resolve, reject) => {
-        contestantIP = contestantIP[0] || '';
-        let filteredIP = contestantIP.split('/')[0];
-        axios.get(`http://${CONTESTANT_API_IP}:${CONTESTANT_API_PORT}/contestant/${filteredIP}`)
+        return Promise.resolve()
+            .then(() => {
+                contestantIP = contestantIP[0] || '';
+                let filteredIP = contestantIP.split('/')[0];
+                return filteredIP;
+            })
+            .then((filteredIP) => {
+                return axios.get(`http://${CONTESTANT_API_IP}:${CONTESTANT_API_PORT}/contestant/${filteredIP}`);
+            })
             .then((res) => {
                 if (!res.data) {
                     throw new Error();
