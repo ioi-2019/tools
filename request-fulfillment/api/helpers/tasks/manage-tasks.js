@@ -27,7 +27,7 @@ const replyTask = (taskID, userID, params) => {
         .then((tasks) => {
             const task = tasks[0];
             if (task) {
-                return Promise.resolve();
+                return Promise.resolve(tasks);
             } else {
                 throw new Error(errors.ERR_ERROR_OCCURED);
             }
@@ -71,7 +71,8 @@ const unassignUser = (taskID, userID) => {
         });
 };
 
-const completeTask = (taskID, userID) => {
+const completeTask = (taskID, userID, params) => {
+    const { first_name, last_name } = params;
     return knex(tables.CMS_TABLE_QUESTIONS)
         .select('*')
         .where('id', taskID)
@@ -80,15 +81,16 @@ const completeTask = (taskID, userID) => {
             if (task.reply_timestamp != null) {
                 return Promise.resolve([task]);
             } else {
-                return knex(tables.CMS_TABLE_QUESTIONS)
-                    .update({
-                        reply_timestamp: knex.fn.now(),
-                        reply_subject: '',
-                        reply_text: ''
-                    })
-                    .where('id', taskID)
-                    .whereNotNull('admin_id')
-                    .returning('*');
+                return replyTask(
+                    taskID,
+                    userID,
+                    {
+                        first_name,
+                        last_name,
+                        reply_subject: 'HTC answer',
+                        reply_text: 'Done'
+                    }
+                );
             }
         })
         .then((tasks) => {
