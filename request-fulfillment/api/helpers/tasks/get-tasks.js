@@ -187,7 +187,7 @@ const getNewTasks = (userID) => {
                     'u.id'
                 )
                 .where('c.id', contestID)
-                .where('question_timestamp', '>=', '2019-08-07T00:00:00Z')
+                .where('q.question_timestamp', '>=', '2019-08-07T00:00:00Z')
                 .where('q.subject', '~*', filterExp)
                 .whereNull('admin_id')
                 .orderBy('q.question_timestamp', 'asc');
