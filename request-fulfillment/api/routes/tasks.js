@@ -169,7 +169,14 @@ router.post('/:id/manage/complete', checkUser(), (req, res, next) => {
     const { username } = req.body;
     return getUser.getUserByUsername(username)
         .then((user) => {
-            return manageTasks.completeTask(taskID, user.id);
+            return manageTasks.completeTask(
+                taskID,
+                user.id,
+                {
+                    first_name: user.first_name,
+                    last_name: user.last_name
+                }
+            );
         })
         .then(() => {
             res.status(200).json({
