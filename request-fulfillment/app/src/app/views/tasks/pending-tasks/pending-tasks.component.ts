@@ -153,10 +153,10 @@ export class PendingTasksComponent implements OnInit, OnDestroy {
     private restartTimer() {
         if (this.refreshTimer) {
             clearInterval(this.refreshTimer);
-            this.refreshTimer = setInterval(() => {
-                this.loadTableData();
-            }, this.constantsService.PENDING_TASKS_REFRESH_INTERVAL);
         }
+        this.refreshTimer = setInterval(() => {
+            this.loadTableData();
+        }, this.constantsService.PENDING_TASKS_REFRESH_INTERVAL);
     }
 
 }
