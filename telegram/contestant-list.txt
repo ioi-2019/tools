@@ -1,0 +1,335 @@
+b4:a9:fc:02:bf:10,172.30.100.10,A1,CHL2,Hans,Kühn
+b4:a9:fc:02:bd:34,172.30.100.11,A10,AZE5,Aziz,Huseynov
+b4:a9:fc:02:bd:2d,172.30.100.12,A11,MDA2,Claudiu,Babin
+b4:a9:fc:02:bc:a0,172.30.100.13,A12,JPN2,Yasutaka,Hiraki
+b4:a9:fc:02:bf:08,172.30.100.14,A13,KGZ2,Shabdan,Batyrkulov
+b4:a9:fc:02:c0:03,172.30.100.15,A14,IRN2,Mahdi,Jafari Raviz
+b4:a9:fc:02:bf:0b,172.30.100.16,A15,RUS2,Ildar,Gainullin
+b4:a9:fc:02:c0:17,172.30.100.17,A16,BOL1,Daner Zein,Tonconi Mendoza
+b4:a9:fc:02:bf:0d,172.30.100.18,A17,MAC2,Fan Meng,Hong
+b4:a9:fc:02:bf:18,172.30.100.19,A18,PSE2,Samah,Qarada
+b4:a9:fc:02:bd:01,172.30.100.20,A19,DEU3,Lennart,Ferlemann
+b4:a9:fc:02:bd:56,172.30.100.21,A2,ARG1,Carlos Miguel,Soto
+b4:a9:fc:02:bc:dd,172.30.100.22,A20,HKG2,Man Tsung,Yeung
+b4:a9:fc:02:bc:da,172.30.100.23,A21,HUN2,Balázs,Tóth
+b4:a9:fc:02:c0:0c,172.30.100.24,A22,EST2,Richard,Luhtaru
+b4:a9:fc:02:c0:23,172.30.100.25,A23,MNG4,Turbat,Enkhbat
+b4:a9:fc:02:bf:13,172.30.100.26,A24,GEO2,Bakari,Gamezardashvili
+b4:a9:fc:02:bf:1e,172.30.100.27,A25,MKD2,Andrej,Velichkovski
+b4:a9:fc:02:c0:20,172.30.100.28,A26,SVN3,Benjamin,Bajd
+b4:a9:fc:02:bd:17,172.30.100.29,A27,CAN2,George,Chen
+b4:a9:fc:02:bd:06,172.30.100.30,A28,IND2,Rajarshi,Basu
+b4:a9:fc:02:bf:42,172.30.100.31,A29,CYP3,Angelos,Assos
+b4:a9:fc:02:bc:e3,172.30.100.32,A3,NLD2,Charlie,van Diepen
+b4:a9:fc:02:be:f7,172.30.100.33,A30,LKA2,Ashan,Rathnaweera
+b4:a9:fc:02:c0:1a,172.30.100.34,A31,FRA2,Etienne,Rossignol
+b4:a9:fc:02:bd:07,172.30.100.35,A32,COL2,Alvaro,Bacca
+b4:a9:fc:02:bf:64,172.30.100.36,A33,POL2,Marek,Skiba
+b4:a9:fc:02:bf:56,172.30.100.37,A34,NZL2,Maayan,Levy
+b4:a9:fc:02:bc:8a,172.30.100.38,A35,LUX2,Alexandre,FOUQUET
+b4:a9:fc:02:bc:d6,172.30.100.39,A36,AUT1,Thomas,Kaar
+b4:a9:fc:02:bd:0a,172.30.100.40,A4,BIH1,Haris,Imamovic
+b4:a9:fc:02:bf:81,172.30.100.41,A5,SGP2,Eu-Shaun,Leong
+b4:a9:fc:02:bf:fa,172.30.100.42,A6,SRB3,Tadija,Šebez
+b4:a9:fc:02:bd:1c,172.30.100.43,A7,ISR4,Almog,Wald
+b4:a9:fc:02:bc:ec,172.30.100.44,A8,BGD1,Tasmeem,Reza
+b4:a9:fc:02:bc:ae,172.30.100.45,A9,EGY2,Osama,Alkhodairy
+b4:a9:fc:02:bc:a4,172.30.100.46,B1,IRN3,Arshia,Soltani Moakhar
+b4:a9:fc:02:bf:5d,172.30.100.47,B10,EGY3,Hazem,Issa
+b4:a9:fc:02:be:ff,172.30.100.48,B11,LUX3,Léo,Gamboa Dos Santos
+b4:a9:fc:02:bf:98,172.30.100.49,B12,POL3,Mieszko,Grodzicki
+b4:a9:fc:02:bc:cf,172.30.100.50,B13,MKD3,Blagojche,Pavleski
+b4:a9:fc:02:bd:39,172.30.100.51,B14,MYS1,Jia Jun,Lee
+b4:a9:fc:02:bf:f4,172.30.100.52,B15,ARG2,Lautaro,Lasorsa
+b4:a9:fc:02:bd:11,172.30.100.53,B16,CYP4,Andreas,Kalavas
+b4:a9:fc:02:bf:54,172.30.100.54,B17,CAN3,Kevin,Wan
+b4:a9:fc:02:bf:6c,172.30.100.55,B18,DEU4,Erik,Sünderhauf
+b4:a9:fc:02:bf:60,172.30.100.56,B19,JPN3,Masataka,Yoneda
+b4:a9:fc:02:bd:09,172.30.100.57,B2,NZL3,Eric,Song
+b4:a9:fc:02:bd:0d,172.30.100.58,B20,FRA3,Rémy,Kimbrough
+b4:a9:fc:02:bc:c7,172.30.100.59,B21,BGD2,Rezwan,Arefin
+b4:a9:fc:02:bd:2e,172.30.100.60,B22,BIH2,Admir,Zatega
+b4:a9:fc:02:bc:a9,172.30.100.61,B23,GEO3,Davit,Khvedelidze
+b4:a9:fc:02:bc:9d,172.30.100.62,B24,SVN4,Jakob,Schrader
+b4:a9:fc:02:bf:4b,172.30.100.63,B25,ITA1,Jakob,Nogler
+b4:a9:fc:02:bf:78,172.30.100.64,B26,SGP3,Benson Zhan Li,Lin
+b4:a9:fc:02:bc:b7,172.30.100.65,B27,AUT2,Robin,Gugel
+b4:a9:fc:02:bc:d9,172.30.100.66,B28,KGZ3,Talantbek,Zhenishbek uulu
+b4:a9:fc:02:bf:8a,172.30.100.67,B29,COL3,Juan,Martínez
+b4:a9:fc:02:bc:93,172.30.100.68,B3,EST3,Toomas,Tennisberg
+b4:a9:fc:02:bd:31,172.30.100.69,B30,AZE6,Amin,Jalilov
+b4:a9:fc:02:bd:12,172.30.100.70,B31,NLD3,Gijs,Pennings
+b4:a9:fc:02:bc:d8,172.30.100.71,B32,HKG3,Lok Kan,Yuen
+b4:a9:fc:02:bf:47,172.30.100.72,B33,MAC3,Cheng U,Ian
+b4:a9:fc:02:bf:93,172.30.100.73,B34,HUN3,Bálint,Molnár
+b4:a9:fc:02:c0:36,172.30.100.74,B35,CHL3,Diego,Salas
+b4:a9:fc:02:bf:02,172.30.100.75,B36,LKA3,Chamindu,Abeysekera
+b4:a9:fc:02:bd:00,172.30.100.76,B4,MDA3,Victor,Melinceanu
+b4:a9:fc:02:bf:66,172.30.100.77,B5,SRB4,Jovan,Bengin
+b4:a9:fc:02:bc:98,172.30.100.78,B6,BOL2,Fabricio Javier,Cabrera Gordillo
+b4:a9:fc:02:bc:97,172.30.100.79,B7,IND3,Shashwat,Chandra
+b4:a9:fc:02:c0:0d,172.30.100.80,B8,RUS3,Aleksandr,Morozov
+b4:a9:fc:02:c0:00,172.30.100.81,B9,PSE3,Abrar,Toma
+b4:a9:fc:02:bc:8f,172.30.100.82,C1,UKR1,Nazarii,Denha
+b4:a9:fc:02:bc:bc,172.30.100.83,C10,USA3,Benjamin,Qi
+b4:a9:fc:02:bf:68,172.30.100.84,C11,TWN3,Po-Hsuan,Su
+b4:a9:fc:02:bf:fd,172.30.100.85,C12,VNM4,Tung,Nguyen Minh
+b4:a9:fc:02:bc:a1,172.30.100.86,C13,HKG4,Harris,Leung
+b4:a9:fc:02:bf:79,172.30.100.87,C14,TJK3,Nodir,Bobiev
+b4:a9:fc:02:bf:2f,172.30.100.88,C15,AUT3,Daniel,Fendrich
+b4:a9:fc:02:be:f1,172.30.100.89,C16,NLD4,Annejan,van den Dool
+b4:a9:fc:02:bf:fb,172.30.100.90,C17,MYS2,Kel Zin,Tan
+b4:a9:fc:02:bf:7f,172.30.100.91,C18,GEO4,Nikoloz,Birkadze
+b4:a9:fc:02:bc:ac,172.30.100.92,C19,EGY4,Mohamed,Ehab
+b4:a9:fc:02:bc:de,172.30.100.93,C2,DNK1,Alexander,Skovsende
+b4:a9:fc:02:bf:88,172.30.100.94,C20,NZL4,Ivan,Solovyev
+b4:a9:fc:02:bf:73,172.30.100.95,C21,BIH3,Tarik,Dzaka
+b4:a9:fc:02:bc:cb,172.30.100.96,C22,RUS4,Egor,Lifar
+b4:a9:fc:02:bf:85,172.30.100.97,C23,IND4,Adhyyan,Sekhsaria
+b4:a9:fc:02:bf:86,172.30.100.98,C24,SYR3,Hasan,Khadra
+b4:a9:fc:02:bf:8f,172.30.100.99,C25,THA1,Sanchayapol,Lewgasamsarn
+b4:a9:fc:02:bf:d9,172.30.100.100,C26,BOL3,Roger Danilo,Enriquez Corrales
+b4:a9:fc:02:bd:30,172.30.100.101,C27,COL4,Cesar,Diaz
+b4:a9:fc:02:bd:84,172.30.100.102,C28,CZE1,Josef,Minařík
+b4:a9:fc:02:bf:fe,172.30.100.103,C29,LUX4,Stanislas,BRIAUD
+b4:a9:fc:02:bc:99,172.30.100.104,C3,CHL4,Ignacio,Muñoz
+b4:a9:fc:02:bf:b3,172.30.100.105,C30,POL4,Jakub,Wasilewski
+b4:a9:fc:02:bf:6b,172.30.100.106,C31,VNM2,Kien,Vu Hoang
+b4:a9:fc:02:bc:f7,172.30.100.107,C32,MKD4,Andrej,Shekerov
+b4:a9:fc:02:bc:af,172.30.100.108,C33,ITA2,Federico,Stazi
+b4:a9:fc:02:bc:c9,172.30.100.109,C34,SWE1,Gustav,Kalander
+b4:a9:fc:02:bf:0a,172.30.100.110,C35,SGP4,Lee,Jeffrey Chun Hean
+b4:a9:fc:02:bf:0f,172.30.100.111,C36,TUR1,Mehmet Hamza,Erol
+b4:a9:fc:02:bc:f1,172.30.100.112,C37,MAC4,Iat Long,Iong
+b4:a9:fc:02:bf:5e,172.30.100.113,C38,KGZ4,Mirbek,Bakirov
+b4:a9:fc:02:bc:a6,172.30.100.114,C39,PSE4,Basil,Hijaz
+b4:a9:fc:02:bd:0c,172.30.100.115,C4,CAN4,Victor,Rong
+b4:a9:fc:02:bd:7f,172.30.100.116,C40,HUN4,Áron,Noszály
+b4:a9:fc:02:bf:06,172.30.100.117,C41,FRA4,Hugo,Peyraud-Magnin
+b4:a9:fc:02:bf:1b,172.30.100.118,C42,SVK1,Martin,Melicher
+b4:a9:fc:02:bd:03,172.30.100.119,C43,MDA4,Gabriel,Cojocaru
+b4:a9:fc:02:bd:6e,172.30.100.120,C44,ARG3,Laura,Massaccesi
+b4:a9:fc:02:bc:a2,172.30.100.121,C45,EST4,Andres,Alumets
+b4:a9:fc:02:bf:59,172.30.100.122,C46,JPN4,Sora,Todaka
+b4:a9:fc:02:bf:94,172.30.100.123,C47,IRN4,Seyyed Mehrshad,Mirmohammadi
+b4:a9:fc:02:bf:23,172.30.100.124,C48,TKM1,Suleyman,Atayev
+b4:a9:fc:02:be:f6,172.30.100.125,C5,AZE7,Huseyn,Hajiyev
+b4:a9:fc:02:bf:11,172.30.100.126,C6,UZB1,Asadullo,Ganiev
+b4:a9:fc:02:bc:83,172.30.100.127,C7,LKA4,Shenal Santhush,Kotuwewatta
+b4:a9:fc:02:bc:76,172.30.100.128,C8,TUN3,Rafik,Hachana
+b4:a9:fc:02:bc:f4,172.30.100.129,C9,BGD3,Mamnoon,Siam
+b4:a9:fc:02:bc:b3,172.30.100.130,D1,BRA1,Frederico,Bulhões de Souza Ribeiro
+b4:a9:fc:02:bc:d1,172.30.100.131,D10,AZE8,Fatima,Omarova
+b4:a9:fc:02:bc:92,172.30.100.132,D11,VNM3,Duc,Bui Hong
+b4:a9:fc:02:bf:14,172.30.100.133,D12,MYS3,Li Xuan,Tan
+b4:a9:fc:02:bf:99,172.30.100.134,D13,HRV1,Patrick,Pavić
+b4:a9:fc:02:bf:9b,172.30.100.135,D14,USA4,Eric,Zhang
+b4:a9:fc:02:bc:9c,172.30.100.136,D15,SAU1,Ziyad,Alomari
+b4:a9:fc:02:bf:77,172.30.100.137,D16,GBR1,Arthur,Conmy
+b4:a9:fc:02:bd:83,172.30.100.138,D17,UZB2,Behruz,Azam
+b4:a9:fc:02:bf:05,172.30.100.139,D18,UKR2,Sofiia,Melnyk
+b4:a9:fc:02:bf:89,172.30.100.140,D19,TJK4,Davlat,Magzumov
+b4:a9:fc:02:bf:57,172.30.100.141,D2,MAR1,Anouar,Achghaf
+b4:a9:fc:02:bd:22,172.30.100.142,D20,SLV1,José Rodrigo,Santamaría
+b4:a9:fc:02:bc:95,172.30.100.143,D21,LTU1,Gediminas,Lelešius
+b4:a9:fc:02:bf:71,172.30.100.144,D22,TUR2,Cahid Enes,Keles
+b4:a9:fc:02:bc:fd,172.30.100.145,D23,FIN1,Roope,Salmi
+b4:a9:fc:02:bc:dc,172.30.100.146,D24,ITA3,Fabrizio,Brioni
+b4:a9:fc:02:bf:e9,172.30.100.147,D25,CHE1,Joël,Huber
+b4:a9:fc:02:bd:4a,172.30.100.148,D26,TUN4,Aya,Ben Saad
+b4:a9:fc:02:bf:e3,172.30.100.149,D27,PHL1,Dan,Baterisna
+b4:a9:fc:02:bf:fc,172.30.100.150,D28,CUB1,Brayan,Duran Medina
+b4:a9:fc:02:bf:69,172.30.100.151,D29,IDN1,Abdul Malik,Nurrokhman
+b4:a9:fc:02:bc:d2,172.30.100.152,D3,ESP1,Martín,Rodríguez Muñoz
+b4:a9:fc:02:bd:3b,172.30.100.153,D30,CZE2,Michal,Jireš
+b4:a9:fc:02:bc:b9,172.30.100.154,D31,TKM2,Yakup,Allakov
+b4:a9:fc:02:bd:23,172.30.100.155,D32,BGD4,Arman,Ferdous
+b4:a9:fc:02:bf:ff,172.30.100.156,D33,ARG4,Sebastián,Mestre
+b4:a9:fc:02:bf:72,172.30.100.157,D34,MEX1,Sebastian,Sánchez Lara
+b4:a9:fc:02:bf:90,172.30.100.158,D35,SWE2,Hugo,Eberhard
+b4:a9:fc:02:bd:1b,172.30.100.159,D36,ROU1,Theodor Pierre,Moroianu
+b4:a9:fc:02:bf:7d,172.30.100.160,D37,DNK2,Christian,Bertram
+b4:a9:fc:02:c0:1d,172.30.100.161,D38,KOR1,Sebin,Kim
+b4:a9:fc:02:bc:a8,172.30.100.162,D39,SYR4,Tamer,Emad
+b4:a9:fc:02:bd:79,172.30.100.163,D4,MNE1,Kosta,Vukicevic
+b4:a9:fc:02:bc:c8,172.30.100.164,D40,NOR1,Håvard Rognebakke,Krogstie
+b4:a9:fc:02:bf:12,172.30.100.165,D41,LVA1,Renāts,Jurševskis
+b4:a9:fc:02:bf:0e,172.30.100.166,D42,GRC1,Dimitrios,Rontogiannis
+b4:a9:fc:02:bf:52,172.30.100.167,D43,ISL1,Bjarni Dagur Thor,Kárason
+b4:a9:fc:02:bf:1a,172.30.100.168,D44,ZAF1,Andi,Qu
+b4:a9:fc:02:bc:9f,172.30.100.169,D45,PRT1,Kevin,Pucci
+b4:a9:fc:02:bc:9e,172.30.100.170,D46,SVK2,Ondrej,Baranovič
+b4:a9:fc:02:bc:f6,172.30.100.171,D47,BIH4,Hanka,Goralija
+b4:a9:fc:02:bd:58,172.30.100.172,D48,CHN1,Junzhao,Yang
+b4:a9:fc:02:bc:cc,172.30.100.173,D5,KAZ1,Batyr,Sardarbekov
+b4:a9:fc:02:bf:0c,172.30.100.174,D6,THA2,Pongsaphol,Pongsawakul
+b4:a9:fc:02:bd:10,172.30.100.175,D7,AUT4,Nina,Mitrovic
+b4:a9:fc:02:bd:15,172.30.100.176,D8,IRL1,Kieran,Horgan
+b4:a9:fc:02:bf:2d,172.30.100.177,D9,TWN4,Shih-Yu,Wang
+b4:a9:fc:02:bd:7d,172.30.100.178,E1,IDN2,Vincent,Ling
+b4:a9:fc:02:bc:e9,172.30.100.179,E10,SAU2,Fares,Pasuni
+b4:a9:fc:02:bc:ed,172.30.100.180,E11,TUN2,Nader,Jemel
+b4:a9:fc:02:bd:0e,172.30.100.181,E12,TUR3,Ekrem,BAL
+b4:a9:fc:02:bf:38,172.30.100.182,E13,TJK2,Anushervon,Bozorov
+b4:a9:fc:02:bc:f2,172.30.100.183,E14,AZE1,Farhad,Azimov
+b4:a9:fc:02:bd:62,172.30.100.184,E15,DNK3,William Bille,Meyling
+b4:a9:fc:02:bd:36,172.30.100.185,E16,HRV2,Pavel,Kliska
+b4:a9:fc:02:c0:3c,172.30.100.186,E17,VNM1,Phuc,Trinh Huu Gia
+b4:a9:fc:02:c0:3d,172.30.100.187,E18,BLR1,Yaraslau,Barysau
+b4:a9:fc:02:bd:3f,172.30.100.188,E19,MEX2,Héctor Fernando,Ricárdez Lara
+b4:a9:fc:02:bd:77,172.30.100.189,E2,ITA4,Alessandro,Bortolin
+b4:a9:fc:02:bd:45,172.30.100.190,E20,LTU2,Martynas,Sinkievič
+b4:a9:fc:02:bd:28,172.30.100.191,E21,THA3,Tanapoom,Laoaroon
+b4:a9:fc:02:bd:18,172.30.100.192,E22,SLV2,Darwin,Piche
+b4:a9:fc:02:bd:76,172.30.100.193,E23,FIN2,Santeri,Toivonen
+b4:a9:fc:02:bc:d4,172.30.100.194,E24,CHN2,Xiuhan,Wang
+b4:a9:fc:02:c0:08,172.30.100.195,E25,PHL2,Miko,Surara
+b4:a9:fc:02:c0:21,172.30.100.196,E26,PRT2,David,Nassauer
+b4:a9:fc:02:bc:d0,172.30.100.197,E27,SWE3,Fredrik,Ekholm
+b4:a9:fc:02:bc:86,172.30.100.198,E28,ESP2,Vicent,Baeza Esteve
+b4:a9:fc:02:bf:4d,172.30.100.199,E29,SVK3,Michal,Staník
+b4:a9:fc:02:bf:04,172.30.100.200,E3,MYS4,Ming Yean,Lim
+b4:a9:fc:02:bf:16,172.30.100.201,E30,MNE2,Jovan,Kascelan
+b4:a9:fc:02:bd:3a,172.30.100.202,E31,ISL2,Ásþór,Björnsson
+b4:a9:fc:02:c0:34,172.30.100.203,E32,BGR1,Radoslav,Dimitrov
+b4:a9:fc:02:bf:24,172.30.100.204,E33,KAZ2,Daniyar,Zakarin
+b4:a9:fc:02:bd:29,172.30.100.205,E34,IRL2,Caolan,Fleming
+b4:a9:fc:02:bd:59,172.30.100.206,E35,SYR2,Mohammad Nour,Massri
+b4:a9:fc:02:bf:8e,172.30.100.207,E36,CZE3,Jiří,Kalvoda
+b4:a9:fc:02:bf:5f,172.30.100.208,E37,UZB3,Sardorbek,Sobirov
+b4:a9:fc:02:bf:95,172.30.100.209,E38,AUS1,Angus,Ritossa
+b4:a9:fc:02:bf:f2,172.30.100.210,E39,ZAF2,Mohammed Taariq,Mowzer
+b4:a9:fc:02:bf:e2,172.30.100.211,E4,KOR2,Gyojun,Youn
+b4:a9:fc:02:bf:1c,172.30.100.212,E40,TWN2,Min-Yen,Tsai
+b4:a9:fc:02:bf:25,172.30.100.213,E41,CUB2,Humberto,Yusta Gómez
+b4:a9:fc:02:bf:22,172.30.100.214,E42,GRC2,Evangelos,Pipis
+b4:a9:fc:02:bc:bd,172.30.100.215,E43,ROU2,Bogdan,Sitaru
+b4:a9:fc:02:c0:16,172.30.100.216,E44,UKR3,Andriy,Kuts
+b4:a9:fc:02:c0:22,172.30.100.217,E45,LVA2,Matīss,Kristiņš
+b4:a9:fc:02:bc:a7,172.30.100.218,E46,BRA2,Willian,Wang
+b4:a9:fc:02:c0:2a,172.30.100.219,E47,BEL1,Oscar,Jocqué
+b4:a9:fc:02:c0:01,172.30.100.220,E48,CHE2,Valentin,Imbach
+b4:a9:fc:02:bc:f0,172.30.100.221,E5,TKM3,Bazarkuly,Baymuradov
+b4:a9:fc:02:bf:36,172.30.100.222,E6,GBR2,Zachary,Smith
+b4:a9:fc:02:bf:03,172.30.100.223,E7,MAR2,Mohamed,El Khatri
+b4:a9:fc:02:bf:17,172.30.100.224,E8,NOR2,Eik,Hvattum Røgeberg
+b4:a9:fc:02:bd:08,172.30.100.225,E9,USA2,Daniel,Zhang
+b4:a9:fc:02:bf:6a,172.30.100.226,F1,ZAF3,Ralph,McDougall
+b4:a9:fc:02:bf:7a,172.30.100.227,F10,ESP3,Izan,Beltrán Ferreiro
+b4:a9:fc:02:bc:8e,172.30.100.228,F11,BEL2,Sebastian,Weiermann
+b4:a9:fc:02:bd:0f,172.30.100.229,F12,TWN1,Bo-Yen,Tang
+b4:a9:fc:02:bd:7b,172.30.100.230,F13,LTU3,Tautvydas,Jasiūnas
+b4:a9:fc:02:bf:01,172.30.100.231,F14,CHN3,Ziqian,Zhong
+b4:a9:fc:02:bf:75,172.30.100.232,F15,CUB3,Anier,Velasco Sotomayor
+b4:a9:fc:02:bf:3f,172.30.100.233,F16,MAR3,Aymane,Lotfi
+b4:a9:fc:02:bc:e8,172.30.100.234,F17,THA4,Sirawit,Pongnakintr
+b4:a9:fc:02:c0:05,172.30.100.235,F18,GBR3,Euan,Ong
+b4:a9:fc:02:bf:15,172.30.100.236,F19,CHE3,Christopher,Burckhardt
+b4:a9:fc:02:bf:4e,172.30.100.237,F2,TUR4,Baha Eren,Yaldiz
+b4:a9:fc:02:bf:26,172.30.100.238,F20,AZE2,Abutalib,Namazov
+b4:a9:fc:02:bf:65,172.30.100.239,F21,ROU3,Alexandru,Petrescu
+b4:a9:fc:02:bd:35,172.30.100.240,F22,DNK4,Luis Sebastian,Galan
+b4:a9:fc:02:bd:49,172.30.101.10,F23,KAZ3,Zhan,Kurbanbayev
+b4:a9:fc:02:bd:2f,172.30.101.11,F24,ISR1,Itay,Yehuda
+b4:a9:fc:02:c0:06,172.30.101.12,F25,AUS2,Ryan,Wang
+b4:a9:fc:02:bf:de,172.30.101.13,F26,BGR2,Aleksandar,Krastev
+b4:a9:fc:02:bd:46,172.30.101.14,F27,USA1,William,Lin
+b4:a9:fc:02:bd:20,172.30.101.15,F28,PRT3,Pedro,Dias
+b4:a9:fc:02:bd:26,172.30.101.16,F29,MNG1,Khulegu,Batnasan
+b4:a9:fc:02:c0:02,172.30.101.17,F3,PHL3,Dion Stephan,Ong
+b4:a9:fc:02:bc:e0,172.30.101.18,F30,FIN3,Olli,Järviniemi
+b4:a9:fc:02:bc:a3,172.30.101.19,F31,KOR3,Onjo,Lee
+b4:a9:fc:02:bd:3d,172.30.101.20,F32,SLV3,José Manuel,Cabrera
+b4:a9:fc:02:bf:67,172.30.101.21,F33,MEX3,José Ángel,Cázares Torres
+b4:a9:fc:02:bc:90,172.30.101.22,F34,VEN1,Ana Paula,De Sousa Martin
+b4:a9:fc:02:bd:40,172.30.101.23,F35,TKM4,Gurbanberdi,Gulladyyev
+b4:a9:fc:02:bd:70,172.30.101.24,F36,TUN1,Omar,Besbes
+b4:a9:fc:02:bd:7c,172.30.101.25,F37,UKR4,Maxym,Zub
+b4:a9:fc:02:bd:85,172.30.101.26,F38,HRV3,Dorijan,Lendvaj
+b4:a9:fc:02:bf:87,172.30.101.27,F39,NOR3,Jon-Magnus,Rosenblad
+b4:a9:fc:02:bf:53,172.30.101.28,F4,CZE4,Radek,Olšák
+b4:a9:fc:02:bd:2c,172.30.101.29,F40,BLR2,Siarhei,Protski
+b4:a9:fc:02:bd:7a,172.30.101.30,F41,LVA3,Vladimirs,Ščigoļevs
+b4:a9:fc:02:bf:8b,172.30.101.31,F42,IDN3,R. Fausta Anugrah,Dianparama
+b4:a9:fc:02:bd:53,172.30.101.32,F43,SAU3,Mohammed,Alrefaei
+b4:a9:fc:02:c0:35,172.30.101.33,F44,JOR1,Muhannad,Alwarawreh
+b4:a9:fc:02:bd:69,172.30.101.34,F45,SVK4,Jozef,Fülöp
+b4:a9:fc:02:bc:d3,172.30.101.35,F46,ZAF4,Tian,Cilliers
+b4:a9:fc:02:c0:11,172.30.101.36,F47,SWE4,Carl,Westerlund
+b4:a9:fc:02:bf:dd,172.30.101.37,F48,GRC3,Anastasios,Panagopoulos
+b4:a9:fc:02:bf:2e,172.30.101.38,F5,IRL3,Oisin,Davey
+b4:a9:fc:02:bc:ad,172.30.101.39,F6,NGA1,Ufedo Peter Sule,Achimugu
+b4:a9:fc:02:bf:43,172.30.101.40,F7,TJK1,Akmal,Mamadshoev
+b4:a9:fc:02:c0:1c,172.30.101.41,F8,UZB4,Malokhatkhon,Mukhammadieva
+b4:a9:fc:02:bc:db,172.30.101.42,F9,BRA3,Tiago,Domingos
+b4:a9:fc:02:bc:75,172.30.101.43,H11,RUS1,Vladimir,Romanov
+b4:a9:fc:02:bc:8c,172.30.101.44,H7,SGP1,Daniel Zhenghao,Choo
+b4:a9:fc:02:bc:8d,172.30.101.45,H4,NLD1,Marco,Meijer
+b4:a9:fc:02:bc:91,172.30.101.46,H12,EGY1,Mahmoud,Adel
+b4:a9:fc:02:bc:ab,172.30.101.47,H2,FRA1,Arthur,Léonard
+b4:a9:fc:02:bc:b1,172.30.101.48,G21,GBR4,Benedict,Randall Shaw
+b4:a9:fc:02:bc:b6,172.30.101.49,G23,CHN4,Jiaxuan,Gao
+b4:a9:fc:02:bc:b8,172.30.101.50,H13,BLR4,Kiryl,Shyrma
+b4:a9:fc:02:bc:ca,172.30.101.51,G19,SVN1,Bor,Grošelj Simić
+b4:a9:fc:02:bc:ce,172.30.101.52,H10,KGZ1,Omurbek,Dzhamalov
+b4:a9:fc:02:bc:d7,172.30.101.53,G8,BLR3,Aliaksei,Filinovich
+b4:a9:fc:02:bc:e2,172.30.101.54,G2,MEX4,Diego Emir,García Moreno
+b4:a9:fc:02:bc:fa,172.30.101.55,G14,JOR2,Khaleel,Al-Adhami
+b4:a9:fc:02:bc:fb,172.30.101.56,H20,IRN1,Kasra,Mazaheri
+b4:a9:fc:02:bc:fc,172.30.101.57,H23,LUX1,Jarod,DIFFERDANGE
+b4:a9:fc:02:bc:ff,172.30.101.58,G10,SYR1,Ahmad,Haidar
+b4:a9:fc:02:bd:3e,172.30.101.59,H15,DEU2,Luis,Bahners
+b4:a9:fc:02:bd:78,172.30.101.60,G22,LVA4,Kārlis,Šusters
+b4:a9:fc:02:bd:82,172.30.101.61,G18,IRL4,Andrew,Nash
+b4:a9:fc:02:be:b0,172.30.101.62,H5,AZE4,Ibrahim,Taghizade
+b4:a9:fc:02:be:b1,172.30.101.63,H1,MDA1,Alexandru,Rudi
+b4:a9:fc:02:be:fa,172.30.101.64,H8,BEL4,Jérôme,Mayolet
+b4:a9:fc:02:bf:2c,172.30.101.65,H9,LKA1,Lakshith,Nishshanke
+b4:a9:fc:02:bf:32,172.30.101.66,H21,IND1,Anay,Karnik
+b4:a9:fc:02:bf:51,172.30.101.67,G3,ROU4,Laura Ioana,Georgescu
+b4:a9:fc:02:bf:61,172.30.101.68,G24,CHE4,Nicolas,Camenisch
+b4:a9:fc:02:bf:62,172.30.101.69,G6,KOR4,Yujin,Im
+b4:a9:fc:02:bf:6e,172.30.101.70,G15,BRA4,Pedro,Lucas Lanaro Sponchiado
+b4:a9:fc:02:bf:7c,172.30.101.71,G9,SRB1,Nikola,Pešić
+b4:a9:fc:02:bf:80,172.30.101.72,G12,FIN4,Tuukka,Yildirim
+b4:a9:fc:02:bf:8c,172.30.101.73,G11,IDN4,Moses,Mayer
+b4:a9:fc:02:bf:92,172.30.101.74,H3,COL1,Oscar,Sierra
+b4:a9:fc:02:bf:9a,172.30.101.75,G7,KAZ4,Temirlan,Baibolov
+b4:a9:fc:02:bf:dc,172.30.101.76,G5,PHL4,Steven,Reyes
+b4:a9:fc:02:bf:df,172.30.101.77,G13,HRV4,Krešimir,Nežmah
+b4:a9:fc:02:c0:07,172.30.101.78,G1,BGR3,Martin,Kopchev
+b4:a9:fc:02:c0:0b,172.30.101.79,H18,SVN2,Matevž,Miščič
+b4:a9:fc:02:c0:13,172.30.101.80,H14,CHL1,Mauricio,Cari
+b4:a9:fc:02:c0:18,172.30.101.81,H16,HUN1,Nándor,Nagy
+b4:a9:fc:02:c0:30,172.30.101.82,G4,GRC4,Panagiotis,Chatzimichos
+b4:a9:fc:02:c0:31,172.30.101.83,G17,AUS3,Timmy,Yao
+b4:a9:fc:02:c0:32,172.30.101.84,H17,EST1,Jaagup,Tamme
+b4:a9:fc:02:c0:33,172.30.101.85,G16,NOR4,Sofus,Emil Simonsen Øvretveit
+b4:a9:fc:02:bf:45,172.30.101.86,H24,HKG1,Ka Hei,Wai
+b4:a9:fc:02:c0:3b,172.30.101.87,H6,NZL1,Zhiyuan,Qi
+b4:a9:fc:02:c0:64,172.30.101.88,G20,MAR4,Mohamed Reda,Glioula
+b4:a9:fc:02:bc:96,172.30.101.89,H30,CYP2,Konstantinos,Tziapouras
+b4:a9:fc:02:bc:9a,172.30.101.90,G31,PRT4,Ricardo,Antunes
+b4:a9:fc:02:bc:9b,172.30.101.91,H27,MKD1,Martin,Dinev
+b4:a9:fc:02:bc:b2,172.30.101.92,H19,BGR4,Viktor,Kozhuharov
+b4:a9:fc:02:bc:c6,172.30.101.93,G32,MNG2,Nyamdavaa,Amar
+b4:a9:fc:02:bd:19,172.30.101.94,H25,ISR3,Noam,Gutterman
+b4:a9:fc:02:bd:33,172.30.101.95,G33,NGA2,Chibuoyim Faith Wilson,Ogbonna
+b4:a9:fc:02:bd:41,172.30.101.96,H31,AUS4,Tunan,Shi
+b4:a9:fc:02:bd:63,172.30.101.97,H28,PSE1,Mohammad,Milhem
+b4:a9:fc:02:bd:68,172.30.101.98,H26,MAC1,Kai Seng,Ho
+b4:a9:fc:02:be:fb,172.30.101.99,G29,DOM1,Arturo Aurelio,Hernandez Rodriguez
+b4:a9:fc:02:bf:21,172.30.101.100,G30,CYP1,Charalampos,Georgiou
+b4:a9:fc:02:bf:28,172.30.101.101,G28,ESP4,Javier,Nistal Salas
+b4:a9:fc:02:bf:29,172.30.101.102,H33,SRB2,Mladen,Puzić
+b4:a9:fc:02:bf:30,172.30.101.103,H35,CAN1,Zixiang,Zhou
+b4:a9:fc:02:bf:4a,172.30.101.104,G35,DEU1,Vincent,de Bakker
+b4:a9:fc:02:bf:4f,172.30.101.105,G27,AZE3,Murad,Eynizada
+b4:a9:fc:02:bf:6d,172.30.101.106,H34,JPN1,Koichi,Namekata
+b4:a9:fc:02:bf:84,172.30.101.107,G34,BEL3,Zhiyi,Luo
+b4:a9:fc:02:bf:ec,172.30.101.108,H32,POL1,Mikołaj,Stępiński
+b4:a9:fc:02:bf:f5,172.30.101.109,G36,ISR2,Roee,Sinai
+b4:a9:fc:02:c0:04,172.30.101.110,H29,MNG3,Tugsgerel,Lkhagvasuren
+b4:a9:fc:02:c0:0e,172.30.101.111,G25,SAU4,Abdullah,Aljohani
+b4:a9:fc:02:c0:10,172.30.101.112,H22,GEO1,Teimurazi,Toloraia
+b4:a9:fc:02:c0:12,172.30.101.113,G26,LTU4,Justas,Želnia
