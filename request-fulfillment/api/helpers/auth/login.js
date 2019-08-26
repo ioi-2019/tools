@@ -14,7 +14,6 @@ module.exports = (username, password) => {
         .first()
         .then((user) => {
             if (user) {
-                console.log(user)
                 if (user.is_approved === true) {
                     return checkPassword(password, user.password);
                 } else {
